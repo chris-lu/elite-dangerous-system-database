@@ -36,10 +36,13 @@ Data can be downloaded at https://www.edsm.net/en/nightly-dumps
 cp your_systems_file.json ./data/
 
 # Install Python dependencies
-pip install psycopg2-binary ijson
+pip install psycopg2-binary ijson smart_open
 
 # Start import
 python import_elite_data.py ./data/your_systems_file.json --batch-size 500 --workers 6
+
+# Start import using distant file
+python import_elite_data.py https://example.com/data.json.bz2
 ```
 
 ### Import Options

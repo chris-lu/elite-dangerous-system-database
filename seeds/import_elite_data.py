@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 """
-Elite Dangerous data import script to PostgreSQL - Streaming version with ijson
+Elite Dangerous data import script to PostgreSQL
 Usage: python import_elite_data.py <json_file> [--batch-size 100] [--workers 4]
 
-Dependencies: pip install ijson psycopg2-binary
+Dependencies: pip install smart_open ijson psycopg2-binary
 """
 
 import os
 import sys
+import queue
+import ijson
+import json
 import psycopg2
 import psycopg2.extras
 import argparse
 import logging
 import time
-import queue
-import json
-import ijson
 
+from smart_open import open as smart_open
 from typing import Dict, List, Any, Optional, Iterator
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
@@ -50,31 +51,78 @@ class DatabaseConfig:
     password: str = "elite_password"
 
 class StreamingJSONReader:
-    """JSON streaming reader for line-by-line processing"""
+    """JSON streaming reader for line-by-line processing with smart_open"""
     
     def __init__(self, file_path: str):
         self.file_path = file_path
-        self.file_size = os.path.getsize(file_path)
+        self.file_size = self._get_file_size()
+
+    def _get_file_size(self) -> int:
+        """Get file size, handling different sources (local, S3, HTTP, etc.)"""
+        try:
+            # For local files
+            if self.file_path.startswith(('http://', 'https://', 's3://')):
+                # For remote files, we can't easily get size, so return 0
+                # This will disable progress percentage but keep counting
+                return 0
+            else:
+                return os.path.getsize(self.file_path)
+        except (OSError, ValueError):
+            logger.warning(f"Could not determine file size for {self.file_path}")
+            return 0
         
     def read_systems(self) -> Iterator[tuple[Dict[str, Any], int, float]]:
-        """Generator that reads systems one by one with ijson"""
+        """Generator that reads systems one by one"""
+        import gc
+        
         logger.info(f"Starting streaming read of file: {self.file_path}")
-        logger.info(f"File size: {self.file_size / (1024**3):.2f} GB")
+        if self.file_size > 0:
+            logger.info(f"File size: {self.file_size / (1024**3):.2f} GB")
+        else:
+            logger.info("File size: Unknown (remote or compressed file)")
         
         systems_count = 0
-        
+        bytes_read = 0
+
         try:
-            # Use ijson.items directly which is more robust
-            with open(self.file_path, 'rb') as file:
+            # smart_open automatically handles compression and various protocols
+            # Use binary mode for ijson compatibility
+            with smart_open(self.file_path, 'rb', 
+                          # Optional parameters for better performance
+                          transport_params={'buffer_size': 1024*1024}) as file:
+                
+                # Use ijson.items for streaming JSON array parsing
                 systems = ijson.items(file, 'item')
+
                 for system in systems:
                     systems_count += 1
-                    bytes_read = file.tell() if hasattr(file, 'tell') else systems_count * 1000
-                    progress = (bytes_read / self.file_size) * 100 if self.file_size > 0 else 0
+
+                    # Try to get bytes read for progress calculation
+                    try:
+                        if hasattr(file, 'tell'):
+                            bytes_read = file.tell()
+                        elif hasattr(file, '_raw') and hasattr(file._raw, 'tell'):
+                            bytes_read = file._raw.tell()
+                        else:
+                            # Fallback: estimate based on system count
+                            bytes_read = systems_count * 1000
+                    except (OSError, AttributeError):
+                        bytes_read = systems_count * 1000
+
+                    # Calculate progress
+                    if self.file_size > 0:
+                        progress = (bytes_read / self.file_size) * 100
+                    else:
+                        progress = 0  # Unknown progress for remote files
+                    
                     yield system, systems_count, progress
                     
+                    # Force garbage collection every 1000 systems to prevent memory buildup
+                    if systems_count % 1000 == 0:
+                        gc.collect()
+                    
         except Exception as e:
-            logger.error(f"Error reading file with ijson: {e}")
+            logger.error(f"Error reading file with smart_open/ijson: {e}")
             raise
 
 
@@ -115,7 +163,7 @@ class EliteDataImporter:
             return result[0] if result else faction_data['id']
     
     def insert_system_batch(self, systems_batch: List[Dict[str, Any]]) -> tuple[int, int]:
-        """Insérer un batch de systèmes avec gestion d'erreurs optimisée"""
+        """Insert a batch of systems with optimized error handling"""
         processed = 0
         errors = 0
         
@@ -175,19 +223,29 @@ class EliteDataImporter:
         return True
     
     def insert_system(self, conn, system_data: Dict[str, Any]):
-        """Insert a stellar system with optimizations"""
+        """Insert a stellar system with optimizations and memory cleanup"""
         with conn.cursor() as cur:
             # Process controlling faction
             controlling_faction_id = None
-            if 'controllingFaction' in system_data and system_data['controllingFaction']:
+            controlling_faction = system_data.get('controllingFaction')
+            if controlling_faction:
                 try:
-                    controlling_faction_id = self.insert_faction(conn, system_data['controllingFaction'])
+                    controlling_faction_id = self.insert_faction(conn, controlling_faction)
                 except:
                     pass  # Continue without controlling faction if error
             
-            # Prepare system data (optimized version)
+            # Prepare system data (optimized version) - extract only what we need
             coords = system_data['coords']
-            controlling_faction = system_data.get('controllingFaction', {})
+            
+            # Create minimal JSON for raw_data to save memory
+            essential_data = {
+                'id': system_data['id'],
+                'name': system_data['name'],
+                'coords': coords,
+                'allegiance': system_data.get('allegiance'),
+                'government': system_data.get('government'),
+                'population': system_data.get('population', 0)
+            }
             
             system_insert_data = {
                 'id': system_data['id'],
@@ -203,15 +261,15 @@ class EliteDataImporter:
                 'security': system_data.get('security'),
                 'population': system_data.get('population', 0),
                 'controlling_faction_id': controlling_faction_id,
-                'controlling_faction_name': controlling_faction.get('name'),
-                'controlling_faction_allegiance': controlling_faction.get('allegiance'),
-                'controlling_faction_government': controlling_faction.get('government'),
-                'controlling_faction_is_player': controlling_faction.get('isPlayer', False),
+                'controlling_faction_name': controlling_faction.get('name') if controlling_faction else None,
+                'controlling_faction_allegiance': controlling_faction.get('allegiance') if controlling_faction else None,
+                'controlling_faction_government': controlling_faction.get('government') if controlling_faction else None,
+                'controlling_faction_is_player': controlling_faction.get('isPlayer', False) if controlling_faction else False,
                 'date_discovered': self.parse_datetime(system_data.get('date')),
-                'raw_data': json.dumps(system_data, cls=DecimalEncoder, separators=(',', ':'))  # Compact JSON
+                'raw_data': json.dumps(essential_data, cls=DecimalEncoder, separators=(',', ':'))
             }
             
-            # Insert the system (optimized query)
+            # Insert the system
             cur.execute("""
                 INSERT INTO systems (
                     id, id64, name, x, y, z, allegiance, government, state, economy, 
@@ -233,19 +291,22 @@ class EliteDataImporter:
             """, system_insert_data)
             
             # Process factions (optimized with batch insert)
-            if 'factions' in system_data and system_data['factions']:
-                self._insert_system_factions_batch(cur, system_data['id'], system_data['factions'])
+            factions = system_data.get('factions')
+            if factions:
+                self._insert_system_factions_batch(cur, system_data['id'], factions)
             
             # Process stations and celestial bodies
-            if 'stations' in system_data:
-                for station in system_data['stations']:
+            stations = system_data.get('stations')
+            if stations:
+                for station in stations:
                     try:
                         self.insert_station(conn, system_data['id'], station)
                     except:
                         pass  # Continue even if station fails
             
-            if 'bodies' in system_data:
-                for body in system_data['bodies']:
+            bodies = system_data.get('bodies')
+            if bodies:
+                for body in bodies:
                     try:
                         self.insert_body(conn, system_data['id'], body)
                     except:
@@ -301,7 +362,6 @@ class EliteDataImporter:
                     pass
             
             body_data = station_data.get('body', {})
-            update_time = station_data.get('updateTime', {})
             
             cur.execute("""
                 INSERT INTO stations (
@@ -390,7 +450,9 @@ class EliteDataImporter:
                     )
 
 def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: int = 4):
-    """Main streaming import function with ijson"""
+    """Main streaming import function with smart_open, ijson and memory management"""
+    import gc
+    
     db_config = DatabaseConfig()
     
     # Check database connection
@@ -411,20 +473,21 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
     total_errors = 0
     start_time = time.time()
     last_report_time = start_time
+    last_gc_time = start_time
     systems_batch = []
     
     logger.info("=" * 70)
-    logger.info("STARTING STREAMING IMPORT WITH IJSON")
+    logger.info("STARTING STREAMING IMPORT WITH SMART_OPEN + IJSON")
     logger.info(f"File: {file_path}")
     logger.info(f"Batch size: {batch_size}")
     logger.info(f"Workers: {max_workers}")
     logger.info("=" * 70)
     
-    # Queue for batches
-    batch_queue = queue.Queue(maxsize=max_workers * 2)
+    # Queue for batches with smaller maxsize to control memory
+    batch_queue = queue.Queue(maxsize=max_workers)
     
     def worker():
-        """Worker thread to process batches"""
+        """Worker thread to process batches with memory cleanup"""
         nonlocal total_processed, total_errors
         importer = EliteDataImporter(db_config)
         
@@ -437,6 +500,9 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
                 processed, errors = importer.insert_system_batch(batch)
                 total_processed += processed
                 total_errors += errors
+                
+                # Explicitly delete the batch and force garbage collection
+                del batch
                 
                 batch_queue.task_done()
                 
@@ -451,14 +517,17 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
         workers = [executor.submit(worker) for _ in range(max_workers)]
         
         try:
-            # Read and process systems with ijson
+            # Read and process systems with smart_open + ijson
             for system_data, systems_count, file_progress in reader.read_systems():
                 systems_batch.append(system_data)
                 
                 # If batch is full, send to workers
                 if len(systems_batch) >= batch_size:
-                    batch_queue.put(systems_batch.copy())
+                    # Create a copy for the queue and immediately clear the original
+                    batch_copy = systems_batch.copy()
                     systems_batch.clear()
+                    
+                    batch_queue.put(batch_copy)
                 
                 # Progress report every 15 seconds
                 current_time = time.time()
@@ -466,17 +535,31 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
                     elapsed = current_time - start_time
                     rate = total_processed / elapsed if elapsed > 0 else 0
                     
-                    logger.info(f"Progress: {file_progress:.1f}% file | "
-                              f"Processed: {total_processed:,} | "
-                              f"Speed: {rate:.1f} sys/s | "
-                              f"Errors: {total_errors} | "
-                              f"Queue: {batch_queue.qsize()}")
+                    if file_progress > 0:
+                        logger.info(f"Progress: {file_progress:.1f}% file | "
+                                  f"Processed: {total_processed:,} | "
+                                  f"Speed: {rate:.1f} sys/s | "
+                                  f"Errors: {total_errors} | "
+                                  f"Queue: {batch_queue.qsize()}")
+                    else:
+                        logger.info(f"Systems read: {systems_count:,} | "
+                                  f"Processed: {total_processed:,} | "
+                                  f"Speed: {rate:.1f} sys/s | "
+                                  f"Errors: {total_errors} | "
+                                  f"Queue: {batch_queue.qsize()}")
                     
                     last_report_time = current_time
+                
+                # Force garbage collection every 60 seconds to prevent memory buildup
+                if current_time - last_gc_time >= 60:
+                    gc.collect()
+                    last_gc_time = current_time
             
             # Process last batch
             if systems_batch:
-                batch_queue.put(systems_batch)
+                batch_copy = systems_batch.copy()
+                systems_batch.clear()
+                batch_queue.put(batch_copy)
             
             # Wait for all batches to be processed
             batch_queue.join()
@@ -490,6 +573,10 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
         except Exception as e:
             logger.error(f"Error during import: {e}")
             return False
+        finally:
+            # Final cleanup
+            systems_batch.clear()
+            gc.collect()
     
     # Final statistics
     total_time = time.time() - start_time
@@ -509,8 +596,28 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
     return success_rate > 85
 
 def main():
-    parser = argparse.ArgumentParser(description='Import Elite Dangerous data')
-    parser.add_argument('file', help='JSON file to import')
+    parser = argparse.ArgumentParser(
+        description='Import Elite Dangerous data',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Local file
+  python import_elite_data.py data.json
+  
+  # Compressed file (auto-detected)
+  python import_elite_data.py data.json.gz
+  
+  # S3 file
+  python import_elite_data.py s3://bucket/data.json
+  
+  # HTTP file
+  python import_elite_data.py https://example.com/data.json.bz2
+  
+  # With custom settings
+  python import_elite_data.py data.json --batch-size 500 --workers 8
+        """
+    )
+    parser.add_argument('file', help='JSON file to import (supports local, S3, HTTP, compressed files)')
     parser.add_argument('--batch-size', type=int, default=1000, help='Batch size (default: 1000)')
     parser.add_argument('--workers', type=int, default=4, help='Number of parallel threads (default: 4)')
     parser.add_argument('--verbose', '-v', action='store_true', help='Verbose mode')
@@ -520,10 +627,11 @@ def main():
     if args.verbose:
         logging.getLogger().setLevel(logging.DEBUG)
     
-    # Check that file exists
-    if not os.path.exists(args.file):
-        logger.error(f"File not found: {args.file}")
-        sys.exit(1)
+    # For local files, check that they exist
+    if not args.file.startswith(('http://', 'https://', 's3://', 'ftp://')):
+        if not os.path.exists(args.file):
+            logger.error(f"File not found: {args.file}")
+            sys.exit(1)
     
     # Start import
     success = import_data_streaming(args.file, args.batch_size, args.workers)

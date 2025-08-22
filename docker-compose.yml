@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgis/postgis:15-3.3
+    shm_size: 1g
     container_name: elite_dangerous_db
     environment:
       POSTGRES_DB: elite_dangerous
