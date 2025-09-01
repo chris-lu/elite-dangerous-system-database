@@ -60,7 +60,10 @@ python import_elite_data.py https://example.com/data.json.bz2
 SELECT name, x, y, z, population,
        distance_3d(x, y, z, 0, 0, 0) as distance_ly
 FROM systems 
-WHERE distance_3d(x, y, z, 0, 0, 0) <= 50
+  WHERE x BETWEEN -50 AND 50
+    AND y BETWEEN -50 AND 50
+    AND z BETWEEN -50 AND 50
+    AND distance_3d(x, y, z, 0, 0, 0) <= 50
 ORDER BY distance_ly;
 
 -- Using optimized function

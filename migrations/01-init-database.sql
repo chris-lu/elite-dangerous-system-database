@@ -171,7 +171,7 @@ CREATE TABLE bodies (
     parents JSONB DEFAULT '[]',
     
     -- Metadata
-    update_time TIMESTAMP,
+    last_updated TIMESTAMP,
     raw_data JSONB
 );
 
@@ -256,16 +256,17 @@ RETURNS TABLE(
     distance DOUBLE PRECISION,
     x DOUBLE PRECISION,
     y DOUBLE PRECISION,
-    z DOUBLE PRECISION,
-    population BIGINT
+    z DOUBLE PRECISION
 ) AS $$
 BEGIN
     RETURN QUERY
     SELECT s.id, s.name, 
            distance_3d(s.x, s.y, s.z, center_x, center_y, center_z) as dist,
-           s.x, s.y, s.z, s.population
+           s.x, s.y, s.z
     FROM systems s
-    WHERE distance_3d(s.x, s.y, s.z, center_x, center_y, center_z) <= range_ly
-    ORDER BY dist;
+    WHERE s.x BETWEEN center_x - range_ly AND center_x + range_ly
+       AND s.y BETWEEN center_y - range_ly AND center_y + range_ly
+       AND s.z BETWEEN center_z - range_ly AND center_z + range_ly
+       AND distance_3d(s.x, s.y, s.z, center_x, center_y, center_z) <= range_ly;
 END;
 $$ LANGUAGE plpgsql;

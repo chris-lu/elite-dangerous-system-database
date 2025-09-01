@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Elite Dangerous data import script to PostgreSQL
-Usage: python import_elite_data.py <json_file> [--batch-size 100] [--workers 4]
+Elite Dangerous data import script to PostgreSQL, vibe coded.
+
+Usage: python import_elite_data.py <json_file> [--batch-size 50] [--workers 4]
 
 Dependencies: pip install smart_open ijson psycopg2-binary
 """
@@ -19,7 +20,7 @@ import time
 
 from smart_open import open as smart_open
 from typing import Dict, List, Any, Optional, Iterator
-from datetime import datetime
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from decimal import Decimal
@@ -103,11 +104,8 @@ class StreamingJSONReader:
                             bytes_read = file.tell()
                         elif hasattr(file, '_raw') and hasattr(file._raw, 'tell'):
                             bytes_read = file._raw.tell()
-                        else:
-                            # Fallback: estimate based on system count
-                            bytes_read = systems_count * 1000
                     except (OSError, AttributeError):
-                        bytes_read = systems_count * 1000
+                        pass
 
                     # Calculate progress
                     if self.file_size > 0:
@@ -168,6 +166,7 @@ class EliteDataImporter:
         errors = 0
         
         conn = None
+        
         try:
             conn = self.get_connection()
             conn.autocommit = False
@@ -185,7 +184,7 @@ class EliteDataImporter:
                     
                 except Exception as e:
                     errors += 1
-                    logger.debug(f"Error - {system_data.get('name', 'Unknown')}: {str(e)[:100]}")
+                    logger.error(f"System insert error - Name: {system_data.get('name', 'Unknown')} | ID: {system_data.get('id', 'Unknown')} | Error: {str(e)}")
                     try:
                         conn.rollback()
                     except:
@@ -206,7 +205,7 @@ class EliteDataImporter:
                     conn.close()
                 except:
                     pass
-            
+
         return processed, errors
     
     def _validate_system_data(self, system_data: Dict[str, Any]) -> bool:
@@ -266,6 +265,7 @@ class EliteDataImporter:
                 'controlling_faction_government': controlling_faction.get('government') if controlling_faction else None,
                 'controlling_faction_is_player': controlling_faction.get('isPlayer', False) if controlling_faction else False,
                 'date_discovered': self.parse_datetime(system_data.get('date')),
+                'last_updated': datetime.now(timezone.utc),
                 'raw_data': json.dumps(essential_data, cls=DecimalEncoder, separators=(',', ':'))
             }
             
@@ -275,13 +275,13 @@ class EliteDataImporter:
                     id, id64, name, x, y, z, allegiance, government, state, economy, 
                     security, population, controlling_faction_id, controlling_faction_name,
                     controlling_faction_allegiance, controlling_faction_government,
-                    controlling_faction_is_player, date_discovered, raw_data
+                    controlling_faction_is_player, date_discovered, raw_data, last_updated
                 ) VALUES (
                     %(id)s, %(id64)s, %(name)s, %(x)s, %(y)s, %(z)s, %(allegiance)s, 
                     %(government)s, %(state)s, %(economy)s, %(security)s, %(population)s,
                     %(controlling_faction_id)s, %(controlling_faction_name)s,
                     %(controlling_faction_allegiance)s, %(controlling_faction_government)s,
-                    %(controlling_faction_is_player)s, %(date_discovered)s, %(raw_data)s
+                    %(controlling_faction_is_player)s, %(date_discovered)s, %(raw_data)s, %(last_updated)s
                 ) ON CONFLICT (id) DO UPDATE SET
                     allegiance = EXCLUDED.allegiance,
                     government = EXCLUDED.government,
@@ -309,7 +309,8 @@ class EliteDataImporter:
                 for body in bodies:
                     try:
                         self.insert_body(conn, system_data['id'], body)
-                    except:
+                    except Exception as e:
+                        logger.error(f"Body insert error - System: {system_data.get('name', 'Unknown')} | Body: {body.get('name', 'Unknown')} | ID: {body.get('id', 'Unknown')} | Error: {str(e)}")                        
                         pass  # Continue even if body fails
     
     def _insert_system_factions_batch(self, cur, system_id: int, factions: List[Dict[str, Any]]):
@@ -374,7 +375,9 @@ class EliteDataImporter:
                 ) ON CONFLICT (id) DO UPDATE SET
                     have_market = EXCLUDED.have_market,
                     have_shipyard = EXCLUDED.have_shipyard,
-                    have_outfitting = EXCLUDED.have_outfitting
+                    have_outfitting = EXCLUDED.have_outfitting,
+                    other_services = EXCLUDED.other_services,
+                    controlling_faction_id = EXCLUDED.controlling_faction_id
             """, (
                 station_data['id'],
                 system_id,
@@ -398,19 +401,45 @@ class EliteDataImporter:
             ))
     
     def insert_body(self, conn, system_id: int, body_data: Dict[str, Any]):
-        """Simplified version for celestial body insertion"""
         with conn.cursor() as cur:
             cur.execute("""
                 INSERT INTO bodies (
                     id, id64, system_id, body_id, name, type, sub_type, distance_to_arrival,
-                    is_main_star, is_landable, is_scoopable, gravity, surface_temperature,
-                    earth_masses, radius, spectral_class, atmosphere_type, terraforming_state,
+                    is_main_star, is_landable, is_scoopable, orbital_period, semi_major_axis, orbital_eccentricity,
+                    orbital_inclination, arg_of_periapsis, rotational_period,
+                    rotational_period_tidally_locked, axial_tilt, age, solar_masses, solar_radius,
+                    gravity, surface_temperature,
+                    earth_masses, radius, spectral_class, atmosphere_type, terraforming_state, 
+                    rings, belts, parents,
                     raw_data
                 ) VALUES (
-                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
                 ) ON CONFLICT (id) DO UPDATE SET
                     is_landable = EXCLUDED.is_landable,
-                    terraforming_state = EXCLUDED.terraforming_state
+                    is_scoopable = EXCLUDED.is_scoopable,
+                    orbital_period = EXCLUDED.orbital_period,
+                    semi_major_axis = EXCLUDED.semi_major_axis,
+                    orbital_eccentricity = EXCLUDED.orbital_eccentricity,
+                    orbital_inclination = EXCLUDED.orbital_inclination,
+                    arg_of_periapsis = EXCLUDED.arg_of_periapsis,
+                    rotational_period = EXCLUDED.rotational_period,
+                    rotational_period_tidally_locked = EXCLUDED.rotational_period_tidally_locked,
+                    axial_tilt = EXCLUDED.axial_tilt,
+                    age = EXCLUDED.age,
+                    solar_masses = EXCLUDED.solar_masses,
+                    solar_radius = EXCLUDED.solar_radius,
+                    gravity = EXCLUDED.gravity,
+                    surface_temperature = EXCLUDED.surface_temperature,
+                    earth_masses = EXCLUDED.earth_masses,
+                    radius = EXCLUDED.radius,
+                    spectral_class = EXCLUDED.spectral_class,
+                    atmosphere_type = EXCLUDED.atmosphere_type,
+                    terraforming_state = EXCLUDED.terraforming_state,
+                    rings = EXCLUDED.rings,
+                    belts = EXCLUDED.belts,
+                    parents = EXCLUDED.parents,
+                    raw_data = EXCLUDED.raw_data,
+                    last_updated = CURRENT_TIMESTAMP
             """, (
                 body_data['id'],
                 body_data.get('id64'),
@@ -423,6 +452,17 @@ class EliteDataImporter:
                 body_data.get('isMainStar', False),
                 body_data.get('isLandable', False),
                 body_data.get('isScoopable', False),
+                body_data.get('orbitalPeriod'),
+                body_data.get('semiMajorAxis'),
+                body_data.get('orbitalEccentricity'),
+                body_data.get('orbitalInclination'),
+                body_data.get('argOfPeriapsis'),
+                body_data.get('rotationalPeriod'),
+                body_data.get('rotationalPeriodTidallyLocked', False),
+                body_data.get('axialTilt'),
+                body_data.get('age'),
+                body_data.get('solarMasses'),
+                body_data.get('solarRadius'),
                 body_data.get('gravity'),
                 body_data.get('surfaceTemperature'),
                 body_data.get('earthMasses'),
@@ -430,15 +470,17 @@ class EliteDataImporter:
                 body_data.get('spectralClass'),
                 body_data.get('atmosphereType'),
                 body_data.get('terraformingState'),
+                json.dumps(body_data.get('rings', []), cls=DecimalEncoder, separators=(',', ':')),
+                json.dumps(body_data.get('belts', []), cls=DecimalEncoder, separators=(',', ':')),
+                json.dumps(body_data.get('parents', []), cls=DecimalEncoder, separators=(',', ':')),
                 json.dumps(body_data, cls=DecimalEncoder, separators=(',', ':'))
             ))
             
-            # Insert materials if body is exploitable
-            if body_data.get('isLandable') and 'materials' in body_data:
+            materials = body_data.get('materials')
+            if materials and len(materials) > 0:
                 materials_data = [
                     (body_data['id'], mat_name, percentage)
-                    for mat_name, percentage in body_data['materials'].items()
-                    if percentage > 0.1  # Only significant materials
+                    for mat_name, percentage in materials.items()
                 ]
                 
                 if materials_data:
@@ -449,7 +491,7 @@ class EliteDataImporter:
                         page_size=50
                     )
 
-def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: int = 4):
+def import_data_streaming(file_path: str, batch_size: int = 50, max_workers: int = 4):
     """Main streaming import function with smart_open, ijson and memory management"""
     import gc
     
@@ -493,7 +535,7 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
         
         while True:
             try:
-                batch = batch_queue.get(timeout=30)
+                batch = batch_queue.get(timeout=5)
                 if batch is None:  # Stop signal
                     break
                 
@@ -537,8 +579,8 @@ def import_data_streaming(file_path: str, batch_size: int = 100, max_workers: in
                     
                     if file_progress > 0:
                         logger.info(f"Progress: {file_progress:.1f}% file | "
-                                  f"Processed: {total_processed:,} | "
                                   f"Speed: {rate:.1f} sys/s | "
+                                  f"Processed: {total_processed:,} | "
                                   f"Errors: {total_errors} | "
                                   f"Queue: {batch_queue.qsize()}")
                     else:
@@ -614,11 +656,11 @@ Examples:
   python import_elite_data.py https://example.com/data.json.bz2
   
   # With custom settings
-  python import_elite_data.py data.json --batch-size 500 --workers 8
+  python import_elite_data.py data.json --batch-size 50 --workers 8
         """
     )
     parser.add_argument('file', help='JSON file to import (supports local, S3, HTTP, compressed files)')
-    parser.add_argument('--batch-size', type=int, default=1000, help='Batch size (default: 1000)')
+    parser.add_argument('--batch-size', type=int, default=50, help='Batch size (default: 50)')
     parser.add_argument('--workers', type=int, default=4, help='Number of parallel threads (default: 4)')
     parser.add_argument('--verbose', '-v', action='store_true', help='Verbose mode')
     
