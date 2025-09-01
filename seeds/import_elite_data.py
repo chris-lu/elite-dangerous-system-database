@@ -142,23 +142,30 @@ class EliteDataImporter:
         except (ValueError, TypeError):
             return None
     
-    def insert_faction(self, conn, faction_data: Dict[str, Any]) -> int:
+    def insert_faction(self, cur, faction_data: Dict[str, Any]) -> int:
         """Insert or retrieve a faction"""
-        with conn.cursor() as cur:
-            cur.execute("SELECT id FROM factions WHERE id = %s", (faction_data['id'],))
-            result = cur.fetchone()
-            if result:
-                return result[0]
-            
-            cur.execute("""
-                INSERT INTO factions (id, name, allegiance, government, is_player)
-                VALUES (%(id)s, %(name)s, %(allegiance)s, %(government)s, %(isPlayer)s)
-                ON CONFLICT (id) DO NOTHING
-                RETURNING id
-            """, faction_data)
-            
-            result = cur.fetchone()
-            return result[0] if result else faction_data['id']
+        cur.execute("SELECT id FROM factions WHERE id = %s", (faction_data['id'],))
+        result = cur.fetchone()
+        if result:
+            return result[0]
+        
+        faction_insert_data = {
+            'id': faction_data['id'],
+            'name': faction_data['name'],
+            'allegiance': faction_data.get('allegiance'),
+            'government': faction_data.get('government'),
+            'isPlayer': faction_data.get('isPlayer', False)
+        }
+        
+        cur.execute("""
+            INSERT INTO factions (id, name, allegiance, government, is_player)
+            VALUES (%(id)s, %(name)s, %(allegiance)s, %(government)s, %(isPlayer)s)
+            ON CONFLICT (id) DO NOTHING
+            RETURNING id
+        """, faction_insert_data)
+        
+        result = cur.fetchone()
+        return result[0] if result else faction_data['id']
     
     def insert_system_batch(self, systems_batch: List[Dict[str, Any]]) -> tuple[int, int]:
         """Insert a batch of systems with optimized error handling"""
@@ -176,10 +183,10 @@ class EliteDataImporter:
                     # Quick validation of essential data
                     if not self._validate_system_data(system_data):
                         errors += 1
-                        continue
-                    
-                    self.insert_system(conn, system_data)
-                    conn.commit()  # Commit after each system to avoid aborted transactions
+                        continue                    
+                    with conn.cursor() as cur:
+                        self.insert_system(cur, system_data)
+                        conn.commit()  # Commit after each system to avoid aborted transactions
                     processed += 1
                     
                 except Exception as e:
@@ -221,105 +228,105 @@ class EliteDataImporter:
             
         return True
     
-    def insert_system(self, conn, system_data: Dict[str, Any]):
+    def insert_system(self, cur, system_data: Dict[str, Any]):
         """Insert a stellar system with optimizations and memory cleanup"""
-        with conn.cursor() as cur:
-            # Process controlling faction
-            controlling_faction_id = None
-            controlling_faction = system_data.get('controllingFaction')
-            if controlling_faction:
-                try:
-                    controlling_faction_id = self.insert_faction(conn, controlling_faction)
-                except:
-                    pass  # Continue without controlling faction if error
-            
-            # Prepare system data (optimized version) - extract only what we need
-            coords = system_data['coords']
-            
-            # Create minimal JSON for raw_data to save memory
-            essential_data = {
-                'id': system_data['id'],
-                'name': system_data['name'],
-                'coords': coords,
-                'allegiance': system_data.get('allegiance'),
-                'government': system_data.get('government'),
-                'population': system_data.get('population', 0)
-            }
-            
-            system_insert_data = {
-                'id': system_data['id'],
-                'id64': system_data.get('id64'),
-                'name': system_data['name'],
-                'x': coords['x'],
-                'y': coords['y'],
-                'z': coords['z'],
-                'allegiance': system_data.get('allegiance'),
-                'government': system_data.get('government'),
-                'state': system_data.get('state'),
-                'economy': system_data.get('economy'),
-                'security': system_data.get('security'),
-                'population': system_data.get('population', 0),
-                'controlling_faction_id': controlling_faction_id,
-                'controlling_faction_name': controlling_faction.get('name') if controlling_faction else None,
-                'controlling_faction_allegiance': controlling_faction.get('allegiance') if controlling_faction else None,
-                'controlling_faction_government': controlling_faction.get('government') if controlling_faction else None,
-                'controlling_faction_is_player': controlling_faction.get('isPlayer', False) if controlling_faction else False,
-                'date_discovered': self.parse_datetime(system_data.get('date')),
-                'last_updated': datetime.now(timezone.utc),
-                'raw_data': json.dumps(essential_data, cls=DecimalEncoder, separators=(',', ':'))
-            }
-            
-            # Insert the system
-            cur.execute("""
-                INSERT INTO systems (
-                    id, id64, name, x, y, z, allegiance, government, state, economy, 
-                    security, population, controlling_faction_id, controlling_faction_name,
-                    controlling_faction_allegiance, controlling_faction_government,
-                    controlling_faction_is_player, date_discovered, raw_data, last_updated
-                ) VALUES (
-                    %(id)s, %(id64)s, %(name)s, %(x)s, %(y)s, %(z)s, %(allegiance)s, 
-                    %(government)s, %(state)s, %(economy)s, %(security)s, %(population)s,
-                    %(controlling_faction_id)s, %(controlling_faction_name)s,
-                    %(controlling_faction_allegiance)s, %(controlling_faction_government)s,
-                    %(controlling_faction_is_player)s, %(date_discovered)s, %(raw_data)s, %(last_updated)s
-                ) ON CONFLICT (id) DO UPDATE SET
-                    allegiance = EXCLUDED.allegiance,
-                    government = EXCLUDED.government,
-                    state = EXCLUDED.state,
-                    population = EXCLUDED.population,
-                    last_updated = CURRENT_TIMESTAMP
-            """, system_insert_data)
-            
-            # Process factions (optimized with batch insert)
-            factions = system_data.get('factions')
-            if factions:
-                self._insert_system_factions_batch(cur, system_data['id'], factions)
-            
-            # Process stations and celestial bodies
-            stations = system_data.get('stations')
-            if stations:
-                for station in stations:
-                    try:
-                        self.insert_station(conn, system_data['id'], station)
-                    except:
-                        pass  # Continue even if station fails
-            
-            bodies = system_data.get('bodies')
-            if bodies:
-                for body in bodies:
-                    try:
-                        self.insert_body(conn, system_data['id'], body)
-                    except Exception as e:
-                        logger.error(f"Body insert error - System: {system_data.get('name', 'Unknown')} | Body: {body.get('name', 'Unknown')} | ID: {body.get('id', 'Unknown')} | Error: {str(e)}")                        
-                        pass  # Continue even if body fails
     
+        # Process controlling faction
+        controlling_faction_id = None
+        controlling_faction = system_data.get('controllingFaction')
+        if controlling_faction:
+            try:
+                controlling_faction_id = self.insert_faction(cur, controlling_faction)
+            except:
+                raise  # Continue without controlling faction if error
+        
+        # Prepare system data (optimized version) - extract only what we need
+        coords = system_data['coords']
+        
+        # Create minimal JSON for raw_data to save memory
+        essential_data = {
+            'id': system_data['id'],
+            'name': system_data['name'],
+            'coords': coords,
+            'allegiance': system_data.get('allegiance'),
+            'government': system_data.get('government'),
+            'population': system_data.get('population', 0)
+        }
+        
+        system_insert_data = {
+            'id': system_data['id'],
+            'id64': system_data.get('id64'),
+            'name': system_data['name'],
+            'x': coords['x'],
+            'y': coords['y'],
+            'z': coords['z'],
+            'allegiance': system_data.get('allegiance'),
+            'government': system_data.get('government'),
+            'state': system_data.get('state'),
+            'economy': system_data.get('economy'),
+            'security': system_data.get('security'),
+            'population': system_data.get('population', 0),
+            'controlling_faction_id': controlling_faction_id,
+            'controlling_faction_name': controlling_faction.get('name') if controlling_faction else None,
+            'controlling_faction_allegiance': controlling_faction.get('allegiance') if controlling_faction else None,
+            'controlling_faction_government': controlling_faction.get('government') if controlling_faction else None,
+            'controlling_faction_is_player': controlling_faction.get('isPlayer', False) if controlling_faction else False,
+            'date_discovered': self.parse_datetime(system_data.get('date')),
+            'last_updated': datetime.now(timezone.utc),
+            'raw_data': json.dumps(essential_data, cls=DecimalEncoder, separators=(',', ':'))
+        }
+        
+        # Insert the system
+        cur.execute("""
+            INSERT INTO systems (
+                id, id64, name, x, y, z, allegiance, government, state, economy, 
+                security, population, controlling_faction_id, controlling_faction_name,
+                controlling_faction_allegiance, controlling_faction_government,
+                controlling_faction_is_player, date_discovered, raw_data, last_updated
+            ) VALUES (
+                %(id)s, %(id64)s, %(name)s, %(x)s, %(y)s, %(z)s, %(allegiance)s, 
+                %(government)s, %(state)s, %(economy)s, %(security)s, %(population)s,
+                %(controlling_faction_id)s, %(controlling_faction_name)s,
+                %(controlling_faction_allegiance)s, %(controlling_faction_government)s,
+                %(controlling_faction_is_player)s, %(date_discovered)s, %(raw_data)s, %(last_updated)s
+            ) ON CONFLICT (id) DO UPDATE SET
+                allegiance = EXCLUDED.allegiance,
+                government = EXCLUDED.government,
+                state = EXCLUDED.state,
+                population = EXCLUDED.population,
+                last_updated = CURRENT_TIMESTAMP
+        """, system_insert_data)
+        
+        # Process factions (optimized with batch insert)
+        factions = system_data.get('factions')
+        if factions:
+            self._insert_system_factions_batch(cur, system_data['id'], factions)
+        
+        # Process stations and celestial bodies
+        stations = system_data.get('stations')
+        if stations:
+            for station in stations:
+                try:
+                    self.insert_station(cur, system_data['id'], station)
+                except:
+                    raise
+        
+        bodies = system_data.get('bodies')
+        if bodies:
+            for body in bodies:
+                try:
+                    self.insert_body(cur, system_data['id'], body)
+                except Exception as e:
+                    logger.error(f"Body insert error - System: {system_data.get('name', 'Unknown')} | Body: {body.get('name', 'Unknown')} | ID: {body.get('id', 'Unknown')} | Error: {str(e)}")                        
+                    raise
+
     def _insert_system_factions_batch(self, cur, system_id: int, factions: List[Dict[str, Any]]):
         """Insert system factions in batch"""
         faction_data = []
         
         for faction in factions:
             try:
-                faction_id = self.insert_faction(cur.connection, faction)
+                faction_id = self.insert_faction(cur, faction)
                 faction_data.append((
                     system_id,
                     faction_id,
@@ -332,7 +339,7 @@ class EliteDataImporter:
                     json.dumps(faction.get('pendingStates', []), cls=DecimalEncoder, separators=(',', ':'))
                 ))
             except:
-                continue
+                raise
         
         if faction_data:
             psycopg2.extras.execute_values(
@@ -352,56 +359,57 @@ class EliteDataImporter:
                 page_size=100
             )
     
-    def insert_station(self, conn, system_id: int, station_data: Dict[str, Any]):
+    def insert_station(self, cur, system_id: int, station_data: Dict[str, Any]):
         """Simplified version for station insertion"""
-        with conn.cursor() as cur:
-            controlling_faction_id = None
-            if 'controllingFaction' in station_data and station_data['controllingFaction']:
-                try:
-                    controlling_faction_id = self.insert_faction(conn, station_data['controllingFaction'])
-                except:
-                    pass
-            
-            body_data = station_data.get('body', {})
-            
-            cur.execute("""
-                INSERT INTO stations (
-                    id, system_id, market_id, name, type, distance_to_arrival,
-                    body_id, latitude, longitude, allegiance, government, economy,
-                    second_economy, have_market, have_shipyard, have_outfitting,
-                    other_services, controlling_faction_id, raw_data
-                ) VALUES (
-                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
-                ) ON CONFLICT (id) DO UPDATE SET
-                    have_market = EXCLUDED.have_market,
-                    have_shipyard = EXCLUDED.have_shipyard,
-                    have_outfitting = EXCLUDED.have_outfitting,
-                    other_services = EXCLUDED.other_services,
-                    controlling_faction_id = EXCLUDED.controlling_faction_id
-            """, (
-                station_data['id'],
-                system_id,
-                station_data.get('marketId'),
-                station_data['name'],
-                station_data.get('type'),
-                station_data.get('distanceToArrival'),
-                body_data.get('id'),
-                body_data.get('latitude'),
-                body_data.get('longitude'),
-                station_data.get('allegiance'),
-                station_data.get('government'),
-                station_data.get('economy'),
-                station_data.get('secondEconomy'),
-                station_data.get('haveMarket', False),
-                station_data.get('haveShipyard', False),
-                station_data.get('haveOutfitting', False),
-                json.dumps(station_data.get('otherServices', []), cls=DecimalEncoder, separators=(',', ':')),
-                controlling_faction_id,
-                json.dumps(station_data, cls=DecimalEncoder, separators=(',', ':'))
-            ))
+
+        controlling_faction_id = None
+        if 'controllingFaction' in station_data and station_data['controllingFaction']:
+            try:
+                controlling_faction_id = self.insert_faction(cur, station_data['controllingFaction'])
+            except:
+                raise
+        
+        body_data = station_data.get('body', {})
+        
+        cur.execute("""
+            INSERT INTO stations (
+                id, system_id, market_id, name, type, distance_to_arrival,
+                body_id, latitude, longitude, allegiance, government, economy,
+                second_economy, have_market, have_shipyard, have_outfitting,
+                other_services, controlling_faction_id, raw_data
+            ) VALUES (
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+            ) ON CONFLICT (id) DO UPDATE SET
+                have_market = EXCLUDED.have_market,
+                have_shipyard = EXCLUDED.have_shipyard,
+                have_outfitting = EXCLUDED.have_outfitting,
+                other_services = EXCLUDED.other_services,
+                controlling_faction_id = EXCLUDED.controlling_faction_id
+        """, (
+            station_data['id'],
+            system_id,
+            station_data.get('marketId'),
+            station_data['name'],
+            station_data.get('type'),
+            station_data.get('distanceToArrival'),
+            body_data.get('id'),
+            body_data.get('latitude'),
+            body_data.get('longitude'),
+            station_data.get('allegiance'),
+            station_data.get('government'),
+            station_data.get('economy'),
+            station_data.get('secondEconomy'),
+            station_data.get('haveMarket', False),
+            station_data.get('haveShipyard', False),
+            station_data.get('haveOutfitting', False),
+            json.dumps(station_data.get('otherServices', []), cls=DecimalEncoder, separators=(',', ':')),
+            controlling_faction_id,
+            json.dumps(station_data, cls=DecimalEncoder, separators=(',', ':'))
+        ))
     
-    def insert_body(self, conn, system_id: int, body_data: Dict[str, Any]):
-        with conn.cursor() as cur:
+    def insert_body(self, cur, system_id: int, body_data: Dict[str, Any]):
+        try:
+            # Use INSERT with ON CONFLICT for both id and id64 constraints
             cur.execute("""
                 INSERT INTO bodies (
                     id, id64, system_id, body_id, name, type, sub_type, distance_to_arrival,
@@ -410,34 +418,12 @@ class EliteDataImporter:
                     rotational_period_tidally_locked, axial_tilt, age, solar_masses, solar_radius,
                     gravity, surface_temperature,
                     earth_masses, radius, spectral_class, atmosphere_type, terraforming_state, 
-                    rings, belts, parents,
-                    raw_data
+                    rings, belts, parents, raw_data
                 ) VALUES (
                     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
                 ) ON CONFLICT (id) DO UPDATE SET
                     is_landable = EXCLUDED.is_landable,
-                    is_scoopable = EXCLUDED.is_scoopable,
                     orbital_period = EXCLUDED.orbital_period,
-                    semi_major_axis = EXCLUDED.semi_major_axis,
-                    orbital_eccentricity = EXCLUDED.orbital_eccentricity,
-                    orbital_inclination = EXCLUDED.orbital_inclination,
-                    arg_of_periapsis = EXCLUDED.arg_of_periapsis,
-                    rotational_period = EXCLUDED.rotational_period,
-                    rotational_period_tidally_locked = EXCLUDED.rotational_period_tidally_locked,
-                    axial_tilt = EXCLUDED.axial_tilt,
-                    age = EXCLUDED.age,
-                    solar_masses = EXCLUDED.solar_masses,
-                    solar_radius = EXCLUDED.solar_radius,
-                    gravity = EXCLUDED.gravity,
-                    surface_temperature = EXCLUDED.surface_temperature,
-                    earth_masses = EXCLUDED.earth_masses,
-                    radius = EXCLUDED.radius,
-                    spectral_class = EXCLUDED.spectral_class,
-                    atmosphere_type = EXCLUDED.atmosphere_type,
-                    terraforming_state = EXCLUDED.terraforming_state,
-                    rings = EXCLUDED.rings,
-                    belts = EXCLUDED.belts,
-                    parents = EXCLUDED.parents,
                     raw_data = EXCLUDED.raw_data,
                     last_updated = CURRENT_TIMESTAMP
             """, (
@@ -475,21 +461,24 @@ class EliteDataImporter:
                 json.dumps(body_data.get('parents', []), cls=DecimalEncoder, separators=(',', ':')),
                 json.dumps(body_data, cls=DecimalEncoder, separators=(',', ':'))
             ))
+        except psycopg2.IntegrityError as e:
+            raise
+        
+        # Handle materials
+        materials = body_data.get('materials')
+        if materials and len(materials) > 0:
+            materials_data = [
+                (body_data['id'], mat_name, percentage)
+                for mat_name, percentage in materials.items()
+            ]
             
-            materials = body_data.get('materials')
-            if materials and len(materials) > 0:
-                materials_data = [
-                    (body_data['id'], mat_name, percentage)
-                    for mat_name, percentage in materials.items()
-                ]
-                
-                if materials_data:
-                    psycopg2.extras.execute_values(
-                        cur,
-                        "INSERT INTO body_materials (body_id, material_name, percentage) VALUES %s ON CONFLICT (body_id, material_name) DO UPDATE SET percentage = EXCLUDED.percentage",
-                        materials_data,
-                        page_size=50
-                    )
+            if materials_data:
+                psycopg2.extras.execute_values(
+                    cur,
+                    "INSERT INTO body_materials (body_id, material_name, percentage) VALUES %s ON CONFLICT (body_id, material_name) DO UPDATE SET percentage = EXCLUDED.percentage",
+                    materials_data,
+                    page_size=50
+                )
 
 def import_data_streaming(file_path: str, batch_size: int = 50, max_workers: int = 4):
     """Main streaming import function with smart_open, ijson and memory management"""
