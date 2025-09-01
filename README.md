@@ -53,7 +53,41 @@ python import_elite_data.py https://example.com/data.json.bz2
 
 ## Useful Queries
 
-### 1. Proximity Search
+### 1. Text Search Examples
+
+```sql
+-- Full text search (uses GIN index for complex queries)
+SELECT name, population, allegiance 
+FROM systems 
+WHERE to_tsvector('english', name) @@ to_tsquery('english', 'sol | earth');
+
+-- Simple pattern matching (uses text_pattern_ops index for ILIKE)
+SELECT name, population, allegiance 
+FROM systems 
+WHERE name ILIKE '%sol%' 
+ORDER BY population DESC;
+
+-- Case-sensitive pattern search
+SELECT name, population 
+FROM systems 
+WHERE name LIKE 'Sol%'
+ORDER BY name;
+
+-- Station name search
+SELECT s.name as system_name, st.name as station_name, st.type
+FROM systems s
+JOIN stations st ON s.id = st.system_id
+WHERE st.name ILIKE '%starport%'
+ORDER BY s.name;
+
+-- Faction name search
+SELECT name, allegiance, government
+FROM factions 
+WHERE name ILIKE '%federal%'
+ORDER BY name;
+```
+
+### 2. Proximity Search
 
 ```sql
 -- Systems within 50 ly radius around Sol (0,0,0)

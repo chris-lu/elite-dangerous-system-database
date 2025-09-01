@@ -197,6 +197,7 @@ GROUP BY s.id;
 -- Performance indexes
 CREATE INDEX idx_systems_coords ON systems USING gist(x, y, z);
 CREATE INDEX idx_systems_name ON systems USING gin(to_tsvector('english', name));
+CREATE INDEX idx_systems_name_ilike ON systems(name text_pattern_ops);
 CREATE INDEX idx_systems_allegiance ON systems(allegiance);
 CREATE INDEX idx_systems_population ON systems(population DESC) WHERE population > 0;
 CREATE INDEX idx_systems_economy ON systems(economy);
@@ -208,6 +209,7 @@ CREATE INDEX idx_systems_3d_coords ON systems(x, y, z);
 -- Stations indexes
 CREATE INDEX idx_stations_system_id ON stations(system_id);
 CREATE INDEX idx_stations_name ON stations USING gin(to_tsvector('english', name));
+CREATE INDEX idx_stations_name_ilike ON stations(name text_pattern_ops);
 CREATE INDEX idx_stations_services ON stations USING gin(other_services);
 CREATE INDEX idx_stations_market ON stations(have_market) WHERE have_market = true;
 CREATE INDEX idx_stations_shipyard ON stations(have_shipyard) WHERE have_shipyard = true;
@@ -220,6 +222,7 @@ CREATE INDEX idx_bodies_materials ON body_materials(material_name, percentage DE
 
 -- Factions indexes
 CREATE INDEX idx_factions_name ON factions USING gin(to_tsvector('english', name));
+CREATE INDEX idx_factions_name_ilike ON factions(name text_pattern_ops);
 CREATE INDEX idx_system_factions_influence ON system_factions(influence DESC);
 
 -- JSON indexes for complex queries
