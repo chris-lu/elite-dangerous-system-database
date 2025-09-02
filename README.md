@@ -1,6 +1,8 @@
 # Elite Dangerous Database Setup
 
 PostgreSQL database configuration optimized for Elite Dangerous spatial data.
+This project was "vibe coded" to test the programming skills of LLMs, 
+which is why you’ll find a lot of inconsistent code and some strange structural decisions.
 
 ## Installation and Configuration
 
