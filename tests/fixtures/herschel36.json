@@ -1,0 +1,5491 @@
+{
+  "id64": 2522295,
+  "name": "Herschel 36",
+  "coords": {
+    "x": -468.0,
+    "y": -92.1875,
+    "z": 4474.625
+  },
+  "allegiance": "Independent",
+  "government": "Feudal",
+  "primaryEconomy": "Military",
+  "secondaryEconomy": "Colony",
+  "security": "Low",
+  "population": 62188795,
+  "bodyCount": 2,
+  "controllingFaction": {
+    "name": "The Dukes of Mikunn",
+    "government": "Feudal",
+    "allegiance": "Independent",
+    "pendingStates": [
+      {
+        "state": "Expansion",
+        "trend": 0.0
+      }
+    ],
+    "recoveringStates": [
+      {
+        "state": "Public Holiday",
+        "trend": 0.0
+      }
+    ]
+  },
+  "factions": [
+    {
+      "name": "Sirius Corporation",
+      "allegiance": "Independent",
+      "government": "Corporate",
+      "influence": 0.091,
+      "state": "Expansion",
+      "activeStates": [
+        {
+          "state": "Expansion"
+        }
+      ]
+    },
+    {
+      "name": "The Dukes of Mikunn",
+      "allegiance": "Independent",
+      "government": "Feudal",
+      "influence": 0.787,
+      "state": "None",
+      "pendingStates": [
+        {
+          "state": "Expansion",
+          "trend": 0.0
+        }
+      ],
+      "recoveringStates": [
+        {
+          "state": "Public Holiday",
+          "trend": 0.0
+        }
+      ]
+    },
+    {
+      "name": "The Mercs of Mikunn",
+      "allegiance": "Independent",
+      "government": "Dictatorship",
+      "influence": 0.122,
+      "state": "Expansion",
+      "activeStates": [
+        {
+          "state": "Expansion"
+        }
+      ]
+    }
+  ],
+  "timestamps": {
+    "factions": "2026-09-04T01:31:38Z"
+  },
+  "date": "2026-09-04 01:31:47+00",
+  "bodies": [
+    {
+      "id64": 36028797021486263,
+      "bodyId": 1,
+      "name": "Herschel 36",
+      "type": "Star",
+      "subType": "O (Blue-White) Star",
+      "distanceToArrival": 0.0,
+      "mainStar": true,
+      "age": 1010,
+      "spectralClass": "O7",
+      "luminosity": "V",
+      "absoluteMagnitude": -9.345322,
+      "solarMasses": 31.558594,
+      "solarRadius": 8.82104445147376,
+      "surfaceTemperature": 50879.0,
+      "rotationalPeriod": 2.68431868765046,
+      "axialTilt": 0.218245,
+      "parents": [
+        {
+          "Null": 0
+        }
+      ],
+      "orbitalPeriod": 1999.54756708057,
+      "semiMajorAxis": 5.43082091465611,
+      "orbitalEccentricity": 0.14836,
+      "orbitalInclination": 26.113337,
+      "argOfPeriapsis": 309.596909,
+      "meanAnomaly": 281.675018,
+      "ascendingNode": 0.0,
+      "timestamps": {
+        "distanceToArrival": "2026-09-04T01:31:43Z",
+        "meanAnomaly": "2026-09-04T01:31:43Z"
+      },
+      "stations": [],
+      "updateTime": "2026-09-04 01:31:43+00"
+    },
+    {
+      "id64": 72057594040450231,
+      "bodyId": 2,
+      "name": "Herschel 36 B",
+      "type": "Star",
+      "subType": "O (Blue-White) Star",
+      "distanceToArrival": 5938.660778,
+      "age": 728,
+      "spectralClass": "O7",
+      "luminosity": "V",
+      "absoluteMagnitude": -8.459534,
+      "solarMasses": 26.089844,
+      "solarRadius": 7.85024975413372,
+      "surfaceTemperature": 43983.0,
+      "rotationalPeriod": 2.86155791445602,
+      "axialTilt": 0.181835,
+      "parents": [
+        {
+          "Null": 0
+        }
+      ],
+      "orbitalPeriod": 1999.54756708057,
+      "semiMajorAxis": 6.56918953284506,
+      "orbitalEccentricity": 0.14836,
+      "orbitalInclination": 26.113337,
+      "argOfPeriapsis": 129.596914,
+      "meanAnomaly": 281.675025,
+      "ascendingNode": 0.0,
+      "timestamps": {
+        "distanceToArrival": "2026-09-04T01:31:47Z",
+        "meanAnomaly": "2026-09-04T01:31:47Z"
+      },
+      "stations": [],
+      "updateTime": "2026-09-04 01:31:47+00"
+    }
+  ],
+  "stations": [
+    {
+      "name": "K4Z-8QY",
+      "id": 3704961024,
+      "updateTime": "2022-03-09 21:25:54+00",
+      "distanceToArrival": 0.0,
+      "primaryEconomy": "Private Enterprise",
+      "government": "Private Ownership",
+      "services": [
+        "Dock",
+        "Autodock",
+        "Black Market",
+        "Market",
+        "Contacts",
+        "Universal Cartographics",
+        "Outfitting",
+        "Crew Lounge",
+        "Restock",
+        "Refuel",
+        "Repair",
+        "Shipyard",
+        "Workshop",
+        "Flight Controller",
+        "Station Operations",
+        "Station Menu",
+        "Fleet Carrier Management",
+        "Fleet Carrier Fuel",
+        "Livery",
+        "Redemption Office"
+      ],
+      "type": "Drake-Class Carrier",
+      "landingPads": {
+        "large": 8,
+        "medium": 4,
+        "small": 4
+      },
+      "market": {
+        "commodities": [],
+        "prohibitedCommodities": [],
+        "updateTime": "2022-05-11 01:37:51.977+00"
+      }
+    },
+    {
+      "name": "Orbital Construction Site: Fujikawa Point",
+      "id": 3954347522,
+      "updateTime": "2025-10-28 16:25:48+00",
+      "controllingFaction": "Brewer Corporation",
+      "controllingFactionState": null,
+      "distanceToArrival": 6665.644546,
+      "primaryEconomy": "Colony",
+      "economies": {
+        "Colony": 100.0
+      },
+      "government": "Corporate",
+      "services": [
+        "Dock",
+        "Autodock",
+        "Market",
+        "Contacts",
+        "Restock",
+        "Refuel",
+        "Repair",
+        "Flight Controller",
+        "Station Operations",
+        "Station Menu",
+        "Construction Services"
+      ],
+      "type": "Space Construction Depot",
+      "landingPads": {
+        "large": 0,
+        "medium": 11,
+        "small": 3
+      },
+      "market": {
+        "commodities": [
+          {
+            "name": "Aluminium",
+            "symbol": "Aluminium",
+            "category": "Metals",
+            "commodityId": 128049176,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 1548,
+            "sellPrice": 1547
+          }
+        ],
+        "prohibitedCommodities": [
+          "Narcotics",
+          "Battle Weapons",
+          "Combat Stabilisers",
+          "Imperial Slaves",
+          "Slaves",
+          "Tobacco"
+        ],
+        "updateTime": "2025-10-28 16:25:48+00"
+      }
+    },
+    {
+      "name": "Orbital Construction Site: Daniels Lighthouse",
+      "id": 3954348034,
+      "updateTime": "2026-07-29 18:51:06+00",
+      "controllingFaction": "Brewer Corporation",
+      "controllingFactionState": null,
+      "distanceToArrival": 0.0,
+      "primaryEconomy": "Colony",
+      "economies": {
+        "Colony": 100.0
+      },
+      "government": "Megaconstruction",
+      "services": [
+        "Dock",
+        "Autodock",
+        "Market",
+        "Contacts",
+        "Restock",
+        "Refuel",
+        "Repair",
+        "Flight Controller",
+        "Station Operations",
+        "Station Menu",
+        "Construction Services"
+      ],
+      "type": "Space Construction Depot",
+      "landingPads": {
+        "large": 0,
+        "medium": 11,
+        "small": 3
+      },
+      "market": {
+        "commodities": [
+          {
+            "name": "Food Cartridges",
+            "symbol": "FoodCartridges",
+            "category": "Foods",
+            "commodityId": 128049184,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 29,
+            "sellPrice": 28
+          },
+          {
+            "name": "Fruit and Vegetables",
+            "symbol": "FruitAndVegetables",
+            "category": "Foods",
+            "commodityId": 128049178,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 142,
+            "sellPrice": 141
+          },
+          {
+            "name": "Insulating Membrane",
+            "symbol": "InsulatingMembrane",
+            "category": "Industrial Materials",
+            "commodityId": 128673855,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 7399,
+            "sellPrice": 7398
+          },
+          {
+            "name": "Polymers",
+            "symbol": "Polymers",
+            "category": "Industrial Materials",
+            "commodityId": 128049197,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 37,
+            "sellPrice": 36
+          },
+          {
+            "name": "Semiconductors",
+            "symbol": "Semiconductors",
+            "category": "Industrial Materials",
+            "commodityId": 128049199,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 506,
+            "sellPrice": 505
+          },
+          {
+            "name": "Superconductors",
+            "symbol": "Superconductors",
+            "category": "Industrial Materials",
+            "commodityId": 128049200,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 4479,
+            "sellPrice": 4478
+          },
+          {
+            "name": "Water",
+            "symbol": "Water",
+            "category": "Chemicals",
+            "commodityId": 128049166,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 13,
+            "sellPrice": 12
+          }
+        ],
+        "prohibitedCommodities": [
+          "Narcotics",
+          "Imperial Slaves",
+          "Slaves",
+          "Tobacco"
+        ],
+        "updateTime": "2026-07-29 18:51:06+00"
+      }
+    },
+    {
+      "name": "Orbital Construction Site: Garrett Hub",
+      "id": 3954353666,
+      "updateTime": "2026-07-28 21:54:15+00",
+      "controllingFaction": "Brewer Corporation",
+      "controllingFactionState": null,
+      "distanceToArrival": 0.0,
+      "primaryEconomy": "Colony",
+      "economies": {
+        "Colony": 100.0
+      },
+      "government": "Megaconstruction",
+      "services": [
+        "Dock",
+        "Autodock",
+        "Market",
+        "Contacts",
+        "Restock",
+        "Refuel",
+        "Repair",
+        "Flight Controller",
+        "Station Operations",
+        "Station Menu",
+        "Construction Services"
+      ],
+      "type": "Space Construction Depot",
+      "landingPads": {
+        "large": 0,
+        "medium": 11,
+        "small": 3
+      },
+      "market": {
+        "commodities": [
+          {
+            "name": "Copper",
+            "symbol": "Copper",
+            "category": "Metals",
+            "commodityId": 128049175,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 233,
+            "sellPrice": 232
+          },
+          {
+            "name": "Micro Controllers",
+            "symbol": "MicroControllers",
+            "category": "Technology",
+            "commodityId": 128673873,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 3615,
+            "sellPrice": 3614
+          },
+          {
+            "name": "Steel",
+            "symbol": "Steel",
+            "category": "Metals",
+            "commodityId": 129031238,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 2741,
+            "sellPrice": 2740
+          },
+          {
+            "name": "Titanium",
+            "symbol": "Titanium",
+            "category": "Metals",
+            "commodityId": 128049174,
+            "demand": 0,
+            "supply": 0,
+            "buyPrice": 2928,
+            "sellPrice": 2927
+          }
+        ],
+        "prohibitedCommodities": [
+          "Narcotics",
+          "Imperial Slaves",
+          "Slaves",
+          "Tobacco"
+        ],
+        "updateTime": "2026-07-28 21:54:15+00"
+      }
+    },
+    {
+      "name": "Dreamer's Rest",
+      "id": 4301554947,
+      "updateTime": "2026-09-04 01:36:54+00",
+      "controllingFaction": "The Dukes of Mikunn",
+      "controllingFactionState": null,
+      "distanceToArrival": 113.804586,
+      "primaryEconomy": "Military",
+      "economies": {
+        "Military": 100.0
+      },
+      "government": "Feudal",
+      "services": [
+        "Dock",
+        "Autodock",
+        "Market",
+        "Contacts",
+        "Universal Cartographics",
+        "Missions",
+        "Outfitting",
+        "Crew Lounge",
+        "Restock",
+        "Refuel",
+        "Repair",
+        "Shipyard",
+        "Workshop",
+        "Missions Generated",
+        "Interstellar Factors Contact",
+        "Flight Controller",
+        "Station Operations",
+        "Powerplay",
+        "Search and Rescue",
+        "Station Menu",
+        "Shop",
+        "Livery",
+        "Social Space",
+        "Vista Genomics",
+        "System Colonisation"
+      ],
+      "type": "Ocellus Starport",
+      "state": "Construction",
+      "landingPads": {
+        "large": 6,
+        "medium": 9,
+        "small": 5
+      },
+      "market": {
+        "commodities": [
+          {
+            "name": "Advanced Medicines",
+            "symbol": "AdvancedMedicines",
+            "category": "Medicines",
+            "commodityId": 128682046,
+            "demand": 50639,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 1910
+          },
+          {
+            "name": "Agronomic Treatment",
+            "symbol": "AgronomicTreatment",
+            "category": "Chemicals",
+            "commodityId": 128924334,
+            "demand": 474,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 3945
+          },
+          {
+            "name": "Algae",
+            "symbol": "Algae",
+            "category": "Foods",
+            "commodityId": 128049177,
+            "demand": 48699,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 754
+          },
+          {
+            "name": "Aluminium",
+            "symbol": "Aluminium",
+            "category": "Metals",
+            "commodityId": 128049176,
+            "demand": 159597,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 3365
+          },
+          {
+            "name": "Animal Meat",
+            "symbol": "Animalmeat",
+            "category": "Foods",
+            "commodityId": 128049182,
+            "demand": 3692,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 2080
+          },
+          {
+            "name": "Basic Medicines",
+            "symbol": "BasicMedicines",
+            "category": "Medicines",
+            "commodityId": 128049210,
+            "demand": 39792,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 954
+          },
+          {
+            "name": "Beer",
+            "symbol": "Beer",
+            "category": "Legal Drugs",
+            "commodityId": 128049214,
+            "demand": 347988,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 791
+          },
+          {
+            "name": "Black Box",
+            "symbol": "USSCargoBlackBox",
+            "category": "Salvage",
+            "commodityId": 128666752,
+            "demand": 4588,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 31901
+          },
+          {
+            "name": "CMM Composite",
+            "symbol": "CMMComposite",
+            "category": "Industrial Materials",
+            "commodityId": 128673856,
+            "demand": 27522,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 6952
+          },
+          {
+            "name": "Clothing",
+            "symbol": "Clothing",
+            "category": "Consumer Items",
+            "commodityId": 128049241,
+            "demand": 165641,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 954
+          },
+          {
+            "name": "Coffee",
+            "symbol": "Coffee",
+            "category": "Foods",
+            "commodityId": 128049189,
+            "demand": 15685,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 2080
+          },
+          {
+            "name": "Computer Components",
+            "symbol": "ComputerComponents",
+            "category": "Technology",
+            "commodityId": 128049225,
+            "demand": 98911,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 1206
+          },
+          {
+            "name": "Consumer Technology",
+            "symbol": "ConsumerTechnology",
+            "category": "Consumer Items",
+            "commodityId": 128049240,
+            "demand": 21595,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 7828
+          },
+          {
+            "name": "Damaged Escape Pod",
+            "symbol": "DamagedEscapePod",
+            "category": "Salvage",
+            "commodityId": 128672811,
+            "demand": 4588,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 17466
+          },
+          {
+            "name": "Domestic Appliances",
+            "symbol": "DomesticAppliances",
+            "category": "Consumer Items",
+            "commodityId": 128049238,
+            "demand": 67590,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 1206
+          },
+          {
+            "name": "Emergency Power Cells",
+            "symbol": "EmergencyPowerCells",
+            "category": "Machinery",
+            "commodityId": 128673861,
+            "demand": 44039,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 3038
+          },
+          {
+            "name": "Energy Grid Assembly",
+            "symbol": "PowerGridAssembly",
+            "category": "Machinery",
+            "commodityId": 128673863,
+            "demand": 39910,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 3365
+          },
+          {
+            "name": "Fish",
+            "symbol": "Fish",
+            "category": "Foods",
+            "commodityId": 128049183,
+            "demand": 11373,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 1059
+          },
+          {
+            "name": "Food Cartridges",
+            "symbol": "FoodCartridges",
+            "category": "Foods",
+            "commodityId": 128049184,
+            "demand": 21107,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 759
+          },
+          {
+            "name": "Fruit and Vegetables",
+            "symbol": "FruitAndVegetables",
+            "category": "Foods",
+            "commodityId": 128049178,
+            "demand": 56595,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 954
+          },
+          {
+            "name": "Grain",
+            "symbol": "Grain",
+            "category": "Foods",
+            "commodityId": 128049180,
+            "demand": 276383,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 826
+          },
+          {
+            "name": "H.E. Suits",
+            "symbol": "HazardousEnvironmentSuits",
+            "category": "Technology",
+            "commodityId": 128049226,
+            "demand": 1122855,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 906
+          },
+          {
+            "name": "HN Shock Mount",
+            "symbol": "HNShockMount",
+            "category": "Machinery",
+            "commodityId": 128673860,
+            "demand": 52296,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 2620
+          },
+          {
+            "name": "Hardware Diagnostic Sensor",
+            "symbol": "DiagnosticSensor",
+            "category": "Technology",
+            "commodityId": 128673875,
+            "demand": 23852,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 7828
+          },
+          {
+            "name": "Hostages",
+            "symbol": "Hostage",
+            "category": "Salvage",
+            "commodityId": 128672135,
+            "demand": 4588,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 35399
+          },
+          {
+            "name": "Hydrogen Fuel",
+            "symbol": "HydrogenFuel",
+            "category": "Chemicals",
+            "commodityId": 128049202,
+            "demand": 1,
+            "supply": 520706,
+            "buyPrice": 85,
+            "sellPrice": 80
+          },
+          {
+            "name": "Imperial Slaves",
+            "symbol": "ImperialSlaves",
+            "category": "Slavery",
+            "commodityId": 128667728,
+            "demand": 1,
+            "supply": 26292,
+            "buyPrice": 17434,
+            "sellPrice": 17078
+          },
+          {
+            "name": "Insulating Membrane",
+            "symbol": "InsulatingMembrane",
+            "category": "Industrial Materials",
+            "commodityId": 128673855,
+            "demand": 16513,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 11992
+          },
+          {
+            "name": "Liquor",
+            "symbol": "Liquor",
+            "category": "Legal Drugs",
+            "commodityId": 128049216,
+            "demand": 28189,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 1320
+          },
+          {
+            "name": "Medical Diagnostic Equipment",
+            "symbol": "MedicalDiagnosticEquipment",
+            "category": "Technology",
+            "commodityId": 128682047,
+            "demand": 144945,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 3740
+          },
+          {
+            "name": "Meta-Alloys",
+            "symbol": "MetaAlloys",
+            "category": "Industrial Materials",
+            "commodityId": 128672701,
+            "demand": 22017,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 196782
+          },
+          {
+            "name": "Micro Controllers",
+            "symbol": "MicroControllers",
+            "category": "Technology",
+            "commodityId": 128673873,
+            "demand": 29356,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 6555
+          },
+          {
+            "name": "Micro-weave Cooling Hoses",
+            "symbol": "CoolingHoses",
+            "category": "Industrial Materials",
+            "commodityId": 128673857,
+            "demand": 93572,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 1992
+          },
+          {
+            "name": "Military Grade Fabrics",
+            "symbol": "MilitaryGradeFabrics",
+            "category": "Textiles",
+            "commodityId": 128682045,
+            "demand": 267871,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 1512
+          },
+          {
+            "name": "Nanobreakers",
+            "symbol": "Nanobreakers",
+            "category": "Technology",
+            "commodityId": 128673871,
+            "demand": 71555,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 2497
+          },
+          {
+            "name": "Neofabric Insulation",
+            "symbol": "NeofabricInsulation",
+            "category": "Industrial Materials",
+            "commodityId": 128673858,
+            "demand": 31191,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 6184
+          },
+          {
+            "name": "Nerve Agents",
+            "symbol": "NerveAgents",
+            "category": "Chemicals",
+            "commodityId": 128672304,
+            "demand": 3670,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 14458
+          },
+          {
+            "name": "Non-Lethal Weapons",
+            "symbol": "NonLethalWeapons",
+            "category": "Weapons",
+            "commodityId": 128049236,
+            "demand": 1,
+            "supply": 5279,
+            "buyPrice": 1367,
+            "sellPrice": 1318
+          },
+          {
+            "name": "Occupied Escape Pod",
+            "symbol": "OccupiedCryoPod",
+            "category": "Salvage",
+            "commodityId": 128672125,
+            "demand": 4588,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 31093
+          },
+          {
+            "name": "Onionhead Gamma Strain",
+            "symbol": "OnionHeadC",
+            "category": "Legal Drugs",
+            "commodityId": 128983059,
+            "demand": 16565,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 5835
+          },
+          {
+            "name": "Osmium",
+            "symbol": "Osmium",
+            "category": "Metals",
+            "commodityId": 128671118,
+            "demand": 25683,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 51811
+          },
+          {
+            "name": "Performance Enhancers",
+            "symbol": "PerformanceEnhancers",
+            "category": "Medicines",
+            "commodityId": 128049209,
+            "demand": 50816,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 7828
+          },
+          {
+            "name": "Personal Effects",
+            "symbol": "PersonalEffects",
+            "category": "Salvage",
+            "commodityId": 128672126,
+            "demand": 4588,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 9971
+          },
+          {
+            "name": "Personal Weapons",
+            "symbol": "PersonalWeapons",
+            "category": "Weapons",
+            "commodityId": 128049233,
+            "demand": 1,
+            "supply": 112857,
+            "buyPrice": 3472,
+            "sellPrice": 3355
+          },
+          {
+            "name": "Polymers",
+            "symbol": "Polymers",
+            "category": "Industrial Materials",
+            "commodityId": 128049197,
+            "demand": 1788862,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 768
+          },
+          {
+            "name": "Power Generators",
+            "symbol": "PowerGenerators",
+            "category": "Machinery",
+            "commodityId": 128049217,
+            "demand": 22017,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 3197
+          },
+          {
+            "name": "Progenitor Cells",
+            "symbol": "ProgenitorCells",
+            "category": "Medicines",
+            "commodityId": 128049669,
+            "demand": 9030,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 7828
+          },
+          {
+            "name": "Radiation Baffle",
+            "symbol": "RadiationBaffle",
+            "category": "Machinery",
+            "commodityId": 128673865,
+            "demand": 57801,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 2382
+          },
+          {
+            "name": "Reactive Armour",
+            "symbol": "ReactiveArmour",
+            "category": "Weapons",
+            "commodityId": 128049235,
+            "demand": 1,
+            "supply": 207457,
+            "buyPrice": 1594,
+            "sellPrice": 1538
+          },
+          {
+            "name": "Scrap",
+            "symbol": "Scrap",
+            "category": "Waste",
+            "commodityId": 128049248,
+            "demand": 1,
+            "supply": 315037,
+            "buyPrice": 67,
+            "sellPrice": 56
+          },
+          {
+            "name": "Steel",
+            "symbol": "Steel",
+            "category": "Metals",
+            "commodityId": 129031238,
+            "demand": 71544,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 5204
+          },
+          {
+            "name": "Synthetic Meat",
+            "symbol": "SyntheticMeat",
+            "category": "Foods",
+            "commodityId": 128049185,
+            "demand": 36544,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 879
+          },
+          {
+            "name": "Synthetic Reagents",
+            "symbol": "SyntheticReagents",
+            "category": "Chemicals",
+            "commodityId": 128672303,
+            "demand": 49539,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 7828
+          },
+          {
+            "name": "Tea",
+            "symbol": "Tea",
+            "category": "Foods",
+            "commodityId": 128049188,
+            "demand": 34012,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 2276
+          },
+          {
+            "name": "Telemetry Suite",
+            "symbol": "TelemetrySuite",
+            "category": "Technology",
+            "commodityId": 128673872,
+            "demand": 53208,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 3365
+          },
+          {
+            "name": "Thorium",
+            "symbol": "Thorium",
+            "category": "Metals",
+            "commodityId": 128672301,
+            "demand": 163266,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 12760
+          },
+          {
+            "name": "Titanium",
+            "symbol": "Titanium",
+            "category": "Metals",
+            "commodityId": 128049174,
+            "demand": 67875,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 5510
+          },
+          {
+            "name": "Tobacco",
+            "symbol": "Tobacco",
+            "category": "Legal Drugs",
+            "commodityId": 128049213,
+            "demand": 27337,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 5835
+          },
+          {
+            "name": "Tritium",
+            "symbol": "Tritium",
+            "category": "Chemicals",
+            "commodityId": 128961249,
+            "demand": 9173,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 54041
+          },
+          {
+            "name": "Unoccupied Escape Pod",
+            "symbol": "UnocuppiedEscapePod",
+            "category": "Salvage",
+            "commodityId": 129022087,
+            "demand": 4734,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 4400
+          },
+          {
+            "name": "Water",
+            "symbol": "Water",
+            "category": "Chemicals",
+            "commodityId": 128049166,
+            "demand": 29352,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 749
+          },
+          {
+            "name": "Water Purifiers",
+            "symbol": "WaterPurifiers",
+            "category": "Machinery",
+            "commodityId": 128049218,
+            "demand": 67886,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 937
+          },
+          {
+            "name": "Wine",
+            "symbol": "Wine",
+            "category": "Legal Drugs",
+            "commodityId": 128049215,
+            "demand": 91905,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 879
+          },
+          {
+            "name": "Wreckage Components",
+            "symbol": "WreckageComponents",
+            "category": "Salvage",
+            "commodityId": 128672123,
+            "demand": 4588,
+            "supply": 0,
+            "buyPrice": 0,
+            "sellPrice": 9381
+          }
+        ],
+        "prohibitedCommodities": [
+          "Narcotics",
+          "Battle Weapons",
+          "Combat Stabilisers",
+          "Slaves"
+        ],
+        "updateTime": "2026-09-04 01:36:54+00"
+      },
+      "shipyard": {
+        "ships": [
+          {
+            "name": "Anaconda",
+            "symbol": "Anaconda",
+            "shipId": 128049363
+          },
+          {
+            "name": "Asp Scout",
+            "symbol": "Asp_Scout",
+            "shipId": 128672276
+          },
+          {
+            "name": "Cobra MkIV",
+            "symbol": "CobraMkIV",
+            "shipId": 128672262
+          },
+          {
+            "name": "Cobra MkV",
+            "symbol": "CobraMkV",
+            "shipId": 129031229
+          },
+          {
+            "name": "Corsair",
+            "symbol": "Corsair",
+            "shipId": 129031320
+          },
+          {
+            "name": "Eagle",
+            "symbol": "Eagle",
+            "shipId": 128049255
+          },
+          {
+            "name": "Caspian Explorer",
+            "symbol": "Explorer_NX",
+            "shipId": 129036569
+          },
+          {
+            "name": "Hauler",
+            "symbol": "Hauler",
+            "shipId": 128049261
+          },
+          {
+            "name": "Keelback",
+            "symbol": "Independant_Trader",
+            "shipId": 128672269
+          },
+          {
+            "name": "Krait Phantom",
+            "symbol": "Krait_Light",
+            "shipId": 128839281
+          },
+          {
+            "name": "Krait MkII",
+            "symbol": "Krait_MkII",
+            "shipId": 128816567
+          },
+          {
+            "name": "Type-11 Prospector",
+            "symbol": "LakonMiner",
+            "shipId": 129036130
+          },
+          {
+            "name": "Mandalay",
+            "symbol": "Mandalay",
+            "shipId": 129030680
+          },
+          {
+            "name": "Panther Clipper MkII",
+            "symbol": "PantherMkII",
+            "shipId": 129034269
+          },
+          {
+            "name": "Sidewinder",
+            "symbol": "SideWinder",
+            "shipId": 128049249
+          },
+          {
+            "name": "Kestrel Mk II",
+            "symbol": "SmallCombat01_NX",
+            "shipId": 129039241
+          },
+          {
+            "name": "Type-6 Transporter",
+            "symbol": "Type6",
+            "shipId": 128049285
+          },
+          {
+            "name": "Type-7 Transporter",
+            "symbol": "Type7",
+            "shipId": 128049297
+          },
+          {
+            "name": "Type-8 Transporter",
+            "symbol": "Type8",
+            "shipId": 129030534
+          },
+          {
+            "name": "Viper MkIII",
+            "symbol": "Viper",
+            "shipId": 128049273
+          },
+          {
+            "name": "Viper MkIV",
+            "symbol": "Viper_MkIV",
+            "shipId": 128672255
+          },
+          {
+            "name": "Vulture",
+            "symbol": "Vulture",
+            "shipId": 128049309
+          }
+        ],
+        "updateTime": "2026-09-04 01:36:54+00"
+      },
+      "outfitting": {
+        "modules": [
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Asp_Scout_Armour_Grade1",
+            "moduleId": 128672278,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Asp Scout"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Asp_Scout_Armour_Grade2",
+            "moduleId": 128672279,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Asp Scout"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Asp_Scout_Armour_Grade3",
+            "moduleId": 128672280,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Asp Scout"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "CobraMkV_Armour_Grade1",
+            "moduleId": 129031231,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Cobra MkV"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "CobraMkV_Armour_Grade2",
+            "moduleId": 129031232,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Cobra MkV"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "CobraMkV_Armour_Grade3",
+            "moduleId": 129031233,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Cobra MkV"
+          },
+          {
+            "name": "Mirrored Surface Composite",
+            "symbol": "CobraMkV_Armour_Mirrored",
+            "moduleId": 129031234,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Cobra MkV"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Eagle_Armour_Grade1",
+            "moduleId": 128049256,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Eagle"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Eagle_Armour_Grade2",
+            "moduleId": 128049257,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Eagle"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Eagle_Armour_Grade3",
+            "moduleId": 128049258,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Eagle"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Hauler_Armour_Grade1",
+            "moduleId": 128049262,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Hauler"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Hauler_Armour_Grade2",
+            "moduleId": 128049263,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Hauler"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Hauler_Armour_Grade3",
+            "moduleId": 128049264,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Hauler"
+          },
+          {
+            "name": "Torpedo Pylon",
+            "symbol": "Hpt_AdvancedTorpPylon_Fixed_Small",
+            "moduleId": 128049509,
+            "class": 1,
+            "rating": "I",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Seeker Missile Rack",
+            "symbol": "Hpt_BasicMissileRack_Fixed_Large",
+            "moduleId": 128049494,
+            "class": 3,
+            "rating": "A",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Lockdown Seeker Missile Rack",
+            "symbol": "Hpt_BasicMissileRack_Fixed_Medium",
+            "moduleId": 129045436,
+            "class": 2,
+            "rating": "B",
+            "category": "mercgear"
+          },
+          {
+            "name": "Seeker Missile Rack",
+            "symbol": "Hpt_BasicMissileRack_Fixed_Small",
+            "moduleId": 128049492,
+            "class": 1,
+            "rating": "B",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Beam Laser",
+            "symbol": "Hpt_BeamLaser_Fixed_Large",
+            "moduleId": 128049430,
+            "class": 3,
+            "rating": "C",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Beam Laser",
+            "symbol": "Hpt_BeamLaser_Fixed_Medium",
+            "moduleId": 128049429,
+            "class": 2,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Beam Laser",
+            "symbol": "Hpt_BeamLaser_Fixed_Small",
+            "moduleId": 128049428,
+            "class": 1,
+            "rating": "E",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Beam Laser",
+            "symbol": "Hpt_BeamLaser_Gimbal_Medium",
+            "moduleId": 128049433,
+            "class": 2,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Beam Laser",
+            "symbol": "Hpt_BeamLaser_Gimbal_Small",
+            "moduleId": 128049432,
+            "class": 1,
+            "rating": "E",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Beam Laser",
+            "symbol": "Hpt_BeamLaser_Turret_Medium",
+            "moduleId": 128049436,
+            "class": 2,
+            "rating": "E",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Beam Laser",
+            "symbol": "Hpt_BeamLaser_Turret_Small",
+            "moduleId": 128049435,
+            "class": 1,
+            "rating": "F",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Cannon",
+            "symbol": "Hpt_Cannon_Fixed_Large",
+            "moduleId": 128049440,
+            "class": 3,
+            "rating": "C",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Cannon",
+            "symbol": "Hpt_Cannon_Fixed_Medium",
+            "moduleId": 128049439,
+            "class": 2,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Cannon",
+            "symbol": "Hpt_Cannon_Fixed_Small",
+            "moduleId": 128049438,
+            "class": 1,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Cannon",
+            "symbol": "Hpt_Cannon_Gimbal_Large",
+            "moduleId": 128671120,
+            "class": 3,
+            "rating": "C",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Cannon",
+            "symbol": "Hpt_Cannon_Gimbal_Medium",
+            "moduleId": 128049443,
+            "class": 2,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Cannon",
+            "symbol": "Hpt_Cannon_Gimbal_Small",
+            "moduleId": 128049442,
+            "class": 1,
+            "rating": "E",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Cannon",
+            "symbol": "Hpt_Cannon_Turret_Small",
+            "moduleId": 128049445,
+            "class": 1,
+            "rating": "F",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Enzyme Missile Rack",
+            "symbol": "Hpt_CausticMissile_Fixed_Medium",
+            "moduleId": 128833995,
+            "class": 2,
+            "rating": "B",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Missile Rack",
+            "symbol": "Hpt_DumbfireMissileRack_Fixed_Large",
+            "moduleId": 128891602,
+            "class": 3,
+            "rating": "A",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Missile Rack",
+            "symbol": "Hpt_DumbfireMissileRack_Fixed_Medium",
+            "moduleId": 128666725,
+            "class": 2,
+            "rating": "B",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Missile Rack",
+            "symbol": "Hpt_DumbfireMissileRack_Fixed_Small",
+            "moduleId": 128666724,
+            "class": 1,
+            "rating": "B",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Heat Sink Launcher",
+            "symbol": "Hpt_HeatSinkLauncher_Turret_Tiny",
+            "moduleId": 128049519,
+            "class": 0,
+            "rating": "I",
+            "category": "utility"
+          },
+          {
+            "name": "Mine Launcher",
+            "symbol": "Hpt_MineLauncher_Fixed_Small",
+            "moduleId": 128049500,
+            "class": 1,
+            "rating": "I",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Shock Mine Launcher",
+            "symbol": "Hpt_MineLauncher_Fixed_Small_Impulse",
+            "moduleId": 128671448,
+            "class": 1,
+            "rating": "I",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Long Range Mining Laser",
+            "symbol": "Hpt_MiningLaser_Fixed_Small",
+            "moduleId": 129045432,
+            "class": 1,
+            "rating": "D",
+            "category": "mercgear"
+          },
+          {
+            "name": "Mining Laser",
+            "symbol": "Hpt_MiningLaser_Turret_Small",
+            "moduleId": 128740819,
+            "class": 1,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Far-Reaching Abrasion Blaster",
+            "symbol": "Hpt_Mining_AbrBlstr_Fixed_Small",
+            "moduleId": 129045428,
+            "class": 1,
+            "rating": "D",
+            "category": "mercgear"
+          },
+          {
+            "name": "Seismic Charge Launcher",
+            "symbol": "Hpt_Mining_SeismChrgWarhd_Fixed_Medium",
+            "moduleId": 128915460,
+            "class": 2,
+            "rating": "B",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Sub-Surface Displacement Missile",
+            "symbol": "Hpt_Mining_SubSurfDispMisle_Fixed_Small",
+            "moduleId": 128915454,
+            "class": 1,
+            "rating": "B",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Multi-Cannon",
+            "symbol": "Hpt_MultiCannon_Fixed_Large",
+            "moduleId": 128049457,
+            "class": 3,
+            "rating": "C",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Rapid Phase Multi-Cannon",
+            "symbol": "Hpt_MultiCannon_Fixed_Medium",
+            "moduleId": 129045433,
+            "class": 2,
+            "rating": "E",
+            "category": "mercgear"
+          },
+          {
+            "name": "Multi-Cannon",
+            "symbol": "Hpt_MultiCannon_Gimbal_Large",
+            "moduleId": 128049461,
+            "class": 3,
+            "rating": "C",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Multi-Cannon",
+            "symbol": "Hpt_MultiCannon_Gimbal_Medium",
+            "moduleId": 128049460,
+            "class": 2,
+            "rating": "F",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Multi-Cannon",
+            "symbol": "Hpt_MultiCannon_Gimbal_Small",
+            "moduleId": 128049459,
+            "class": 1,
+            "rating": "G",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Multi-Cannon",
+            "symbol": "Hpt_MultiCannon_Turret_Medium",
+            "moduleId": 128049463,
+            "class": 2,
+            "rating": "F",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Burst Laser",
+            "symbol": "Hpt_PulseLaserBurst_Fixed_Large",
+            "moduleId": 128049402,
+            "class": 3,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Burst Laser",
+            "symbol": "Hpt_PulseLaserBurst_Fixed_Small",
+            "moduleId": 128049400,
+            "class": 1,
+            "rating": "F",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Burst Laser",
+            "symbol": "Hpt_PulseLaserBurst_Gimbal_Small",
+            "moduleId": 128049404,
+            "class": 1,
+            "rating": "G",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Burst Laser",
+            "symbol": "Hpt_PulseLaserBurst_Turret_Small",
+            "moduleId": 128049407,
+            "class": 1,
+            "rating": "G",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Pulse Laser",
+            "symbol": "Hpt_PulseLaser_Fixed_Large",
+            "moduleId": 128049383,
+            "class": 3,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Pulse Laser",
+            "symbol": "Hpt_PulseLaser_Fixed_Medium",
+            "moduleId": 128049382,
+            "class": 2,
+            "rating": "E",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Pulse Laser",
+            "symbol": "Hpt_PulseLaser_Fixed_Small",
+            "moduleId": 128049381,
+            "class": 1,
+            "rating": "F",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Pulse Laser",
+            "symbol": "Hpt_PulseLaser_Gimbal_Medium",
+            "moduleId": 128049386,
+            "class": 2,
+            "rating": "F",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Pulse Laser",
+            "symbol": "Hpt_PulseLaser_Gimbal_Small",
+            "moduleId": 128049385,
+            "class": 1,
+            "rating": "G",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Pulse Laser",
+            "symbol": "Hpt_PulseLaser_Turret_Small",
+            "moduleId": 128049388,
+            "class": 1,
+            "rating": "G",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Enduring Feedback Rail Gun",
+            "symbol": "Hpt_Railgun_Fixed_Medium",
+            "moduleId": 129044375,
+            "class": 2,
+            "rating": "B",
+            "category": "mercgear"
+          },
+          {
+            "name": "Rail Gun",
+            "symbol": "Hpt_Railgun_Fixed_Small",
+            "moduleId": 128049488,
+            "class": 1,
+            "rating": "D",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Shield Booster",
+            "symbol": "Hpt_ShieldBooster_Size0_Class1",
+            "moduleId": 128668532,
+            "class": 0,
+            "rating": "E",
+            "category": "utility"
+          },
+          {
+            "name": "Shield Booster",
+            "symbol": "Hpt_ShieldBooster_Size0_Class2",
+            "moduleId": 128668533,
+            "class": 0,
+            "rating": "D",
+            "category": "utility"
+          },
+          {
+            "name": "Shield Booster",
+            "symbol": "Hpt_ShieldBooster_Size0_Class3",
+            "moduleId": 128668534,
+            "class": 0,
+            "rating": "C",
+            "category": "utility"
+          },
+          {
+            "name": "Shield Booster",
+            "symbol": "Hpt_ShieldBooster_Size0_Class5",
+            "moduleId": 128668536,
+            "class": 0,
+            "rating": "A",
+            "category": "utility"
+          },
+          {
+            "name": "Fragment Cannon",
+            "symbol": "Hpt_Slugshot_Fixed_Medium",
+            "moduleId": 128049449,
+            "class": 2,
+            "rating": "A",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Fragment Cannon",
+            "symbol": "Hpt_Slugshot_Fixed_Small",
+            "moduleId": 128049448,
+            "class": 1,
+            "rating": "E",
+            "category": "hardpoint"
+          },
+          {
+            "name": "Double Screaming Fragment Cannon",
+            "symbol": "Hpt_Slugshot_Gimbal_Small",
+            "moduleId": 129045431,
+            "class": 1,
+            "rating": "E",
+            "category": "mercgear"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Independant_Trader_Armour_Grade1",
+            "moduleId": 128672271,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Keelback"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Independant_Trader_Armour_Grade2",
+            "moduleId": 128672272,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Keelback"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Independant_Trader_Armour_Grade3",
+            "moduleId": 128672273,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Keelback"
+          },
+          {
+            "name": "Planetary Vehicle Hangar",
+            "symbol": "Int_BuggyBay_Size2_Class1",
+            "moduleId": 128672288,
+            "class": 2,
+            "rating": "H",
+            "category": "internal"
+          },
+          {
+            "name": "Planetary Vehicle Hangar",
+            "symbol": "Int_BuggyBay_Size2_Class2",
+            "moduleId": 128672289,
+            "class": 2,
+            "rating": "G",
+            "category": "internal"
+          },
+          {
+            "name": "Planetary Vehicle Hangar",
+            "symbol": "Int_BuggyBay_Size4_Class1",
+            "moduleId": 128672290,
+            "class": 4,
+            "rating": "H",
+            "category": "internal"
+          },
+          {
+            "name": "Planetary Vehicle Hangar",
+            "symbol": "Int_BuggyBay_Size4_Class2",
+            "moduleId": 128672291,
+            "class": 4,
+            "rating": "G",
+            "category": "internal"
+          },
+          {
+            "name": "Planetary Vehicle Hangar",
+            "symbol": "Int_BuggyBay_Size6_Class1",
+            "moduleId": 128672292,
+            "class": 6,
+            "rating": "H",
+            "category": "internal"
+          },
+          {
+            "name": "Planetary Vehicle Hangar",
+            "symbol": "Int_BuggyBay_Size6_Class2",
+            "moduleId": 128672293,
+            "class": 6,
+            "rating": "G",
+            "category": "internal"
+          },
+          {
+            "name": "Cargo Rack",
+            "symbol": "Int_CargoRack_Size1_Class1",
+            "moduleId": 128064338,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Cargo Rack",
+            "symbol": "Int_CargoRack_Size2_Class1",
+            "moduleId": 128064339,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Cargo Rack",
+            "symbol": "Int_CargoRack_Size3_Class1",
+            "moduleId": 128064340,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Cargo Rack",
+            "symbol": "Int_CargoRack_Size4_Class1",
+            "moduleId": 128064341,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Extended Cargo Rack",
+            "symbol": "Int_CargoRack_Size5_Class1",
+            "moduleId": 129045443,
+            "class": 5,
+            "rating": "E",
+            "category": "mercgear"
+          },
+          {
+            "name": "Extended Cargo Rack",
+            "symbol": "Int_CargoRack_Size6_Class1",
+            "moduleId": 129045444,
+            "class": 6,
+            "rating": "E",
+            "category": "mercgear"
+          },
+          {
+            "name": "Cargo Rack",
+            "symbol": "Int_CargoRack_Size7_Class1",
+            "moduleId": 128064344,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Cargo Rack",
+            "symbol": "Int_CargoRack_Size8_Class1",
+            "moduleId": 128064345,
+            "class": 8,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Long Range Detailed Surface Scanner",
+            "symbol": "Int_DetailedSurfaceScanner_Tiny",
+            "moduleId": 129045445,
+            "class": 1,
+            "rating": "I",
+            "category": "mercgear"
+          },
+          {
+            "name": "Advanced Docking Computer",
+            "symbol": "Int_DockingComputer_Advanced",
+            "moduleId": 128935155,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Standard Docking Computer",
+            "symbol": "Int_DockingComputer_Standard",
+            "moduleId": 128049549,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size1_Class2",
+            "moduleId": 128671230,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size1_Class3",
+            "moduleId": 128671231,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size1_Class4",
+            "moduleId": 128671232,
+            "class": 1,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size3_Class2",
+            "moduleId": 128671235,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size3_Class3",
+            "moduleId": 128671236,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size5_Class1",
+            "moduleId": 128671239,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size5_Class2",
+            "moduleId": 128671240,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size5_Class3",
+            "moduleId": 128671241,
+            "class": 5,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size7_Class1",
+            "moduleId": 128671244,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size7_Class2",
+            "moduleId": 128671245,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Collector Limpet Controller",
+            "symbol": "Int_DroneControl_Collection_Size7_Class3",
+            "moduleId": 128671246,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size1_Class1",
+            "moduleId": 128671249,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size1_Class2",
+            "moduleId": 128671250,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size1_Class3",
+            "moduleId": 128671251,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size1_Class4",
+            "moduleId": 128671252,
+            "class": 1,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size3_Class1",
+            "moduleId": 128671254,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size3_Class2",
+            "moduleId": 128671255,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size3_Class3",
+            "moduleId": 128671256,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size5_Class1",
+            "moduleId": 128671259,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size5_Class2",
+            "moduleId": 128671260,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size5_Class3",
+            "moduleId": 128671261,
+            "class": 5,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size7_Class1",
+            "moduleId": 128671264,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size7_Class2",
+            "moduleId": 128671265,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Transfer Limpet Controller",
+            "symbol": "Int_DroneControl_FuelTransfer_Size7_Class3",
+            "moduleId": 128671266,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size1_Class1",
+            "moduleId": 128671269,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size1_Class2",
+            "moduleId": 128671270,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size1_Class3",
+            "moduleId": 128671271,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size1_Class4",
+            "moduleId": 128671272,
+            "class": 1,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size3_Class1",
+            "moduleId": 128671274,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size3_Class2",
+            "moduleId": 128671275,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size3_Class3",
+            "moduleId": 128671276,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size3_Class4",
+            "moduleId": 128671277,
+            "class": 3,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size5_Class1",
+            "moduleId": 128671279,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size5_Class2",
+            "moduleId": 128671280,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size7_Class1",
+            "moduleId": 128671284,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size7_Class2",
+            "moduleId": 128671285,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Prospector Limpet Controller",
+            "symbol": "Int_DroneControl_Prospector_Size7_Class3",
+            "moduleId": 128671286,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Recon Limpet Controller",
+            "symbol": "Int_DroneControl_Recon_Size1_Class1",
+            "moduleId": 128837858,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Recon Limpet Controller",
+            "symbol": "Int_DroneControl_Recon_Size3_Class1",
+            "moduleId": 128841592,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Recon Limpet Controller",
+            "symbol": "Int_DroneControl_Recon_Size5_Class1",
+            "moduleId": 128841593,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Recon Limpet Controller",
+            "symbol": "Int_DroneControl_Recon_Size7_Class1",
+            "moduleId": 128841594,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size1_Class1",
+            "moduleId": 128777327,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size1_Class2",
+            "moduleId": 128777328,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size1_Class3",
+            "moduleId": 128777329,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size1_Class4",
+            "moduleId": 128777330,
+            "class": 1,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size3_Class1",
+            "moduleId": 128777332,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size3_Class2",
+            "moduleId": 128777333,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size3_Class3",
+            "moduleId": 128777334,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size5_Class1",
+            "moduleId": 128777337,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size5_Class2",
+            "moduleId": 128777338,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size5_Class3",
+            "moduleId": 128777339,
+            "class": 5,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size7_Class1",
+            "moduleId": 128777342,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size7_Class2",
+            "moduleId": 128777343,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Repair Limpet Controller",
+            "symbol": "Int_DroneControl_Repair_Size7_Class3",
+            "moduleId": 128777344,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size1_Class1",
+            "moduleId": 128066532,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size1_Class2",
+            "moduleId": 128066533,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size1_Class3",
+            "moduleId": 128066534,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size1_Class4",
+            "moduleId": 128066535,
+            "class": 1,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size3_Class1",
+            "moduleId": 128066537,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size3_Class2",
+            "moduleId": 128066538,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size3_Class3",
+            "moduleId": 128066539,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size3_Class4",
+            "moduleId": 128066540,
+            "class": 3,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size5_Class1",
+            "moduleId": 128066542,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size5_Class2",
+            "moduleId": 128066543,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size7_Class1",
+            "moduleId": 128066547,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size7_Class2",
+            "moduleId": 128066548,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hatch Breaker Limpet Controller",
+            "symbol": "Int_DroneControl_ResourceSiphon_Size7_Class3",
+            "moduleId": 128066549,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Research Limpet Controller",
+            "symbol": "Int_DroneControl_UnkVesselResearch",
+            "moduleId": 128793116,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size2_Class1",
+            "moduleId": 128064068,
+            "class": 2,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size2_Class2",
+            "moduleId": 128064069,
+            "class": 2,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size2_Class3",
+            "moduleId": 128064070,
+            "class": 2,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size2_Class4",
+            "moduleId": 128064071,
+            "class": 2,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size3_Class1",
+            "moduleId": 128064073,
+            "class": 3,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size3_Class2",
+            "moduleId": 128064074,
+            "class": 3,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size3_Class3",
+            "moduleId": 128064075,
+            "class": 3,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size3_Class4",
+            "moduleId": 128064076,
+            "class": 3,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size4_Class1",
+            "moduleId": 128064078,
+            "class": 4,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size4_Class2",
+            "moduleId": 128064079,
+            "class": 4,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size4_Class3",
+            "moduleId": 128064080,
+            "class": 4,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size5_Class1",
+            "moduleId": 128064083,
+            "class": 5,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size5_Class2",
+            "moduleId": 128064084,
+            "class": 5,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size5_Class3",
+            "moduleId": 128064085,
+            "class": 5,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size6_Class1",
+            "moduleId": 128064088,
+            "class": 6,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size6_Class2",
+            "moduleId": 128064089,
+            "class": 6,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size6_Class3",
+            "moduleId": 128064090,
+            "class": 6,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size7_Class1",
+            "moduleId": 128064093,
+            "class": 7,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size7_Class2",
+            "moduleId": 128064094,
+            "class": 7,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size7_Class3",
+            "moduleId": 128064095,
+            "class": 7,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size8_Class1",
+            "moduleId": 128064098,
+            "class": 8,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size8_Class2",
+            "moduleId": 128064099,
+            "class": 8,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Thrusters",
+            "symbol": "Int_Engine_Size8_Class3",
+            "moduleId": 128064100,
+            "class": 8,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size1_Class1",
+            "moduleId": 128666704,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size1_Class2",
+            "moduleId": 128666708,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size2_Class1",
+            "moduleId": 128666705,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size2_Class2",
+            "moduleId": 128666709,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size3_Class1",
+            "moduleId": 128666706,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size3_Class2",
+            "moduleId": 128666710,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size3_Class3",
+            "moduleId": 128666714,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size4_Class1",
+            "moduleId": 128666707,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size4_Class2",
+            "moduleId": 128666711,
+            "class": 4,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size4_Class3",
+            "moduleId": 128666715,
+            "class": 4,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive Interdictor",
+            "symbol": "Int_FSDInterdictor_Size4_Class4",
+            "moduleId": 128666719,
+            "class": 4,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Vessel Hangar",
+            "symbol": "Int_FighterBay_Size5_Class1",
+            "moduleId": 128727930,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Vessel Hangar",
+            "symbol": "Int_FighterBay_Size6_Class1",
+            "moduleId": 128727931,
+            "class": 6,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Vessel Hangar",
+            "symbol": "Int_FighterBay_Size7_Class1",
+            "moduleId": 128727932,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size1_Class1",
+            "moduleId": 128666644,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size1_Class2",
+            "moduleId": 128666652,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size1_Class3",
+            "moduleId": 128666660,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size2_Class1",
+            "moduleId": 128666645,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size2_Class2",
+            "moduleId": 128666653,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size2_Class3",
+            "moduleId": 128666661,
+            "class": 2,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size2_Class4",
+            "moduleId": 128666669,
+            "class": 2,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size2_Class5",
+            "moduleId": 128666677,
+            "class": 2,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size3_Class1",
+            "moduleId": 128666646,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size3_Class2",
+            "moduleId": 128666654,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size3_Class3",
+            "moduleId": 128666662,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size3_Class4",
+            "moduleId": 128666670,
+            "class": 3,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size3_Class5",
+            "moduleId": 128666678,
+            "class": 3,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size5_Class4",
+            "moduleId": 128666672,
+            "class": 5,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size5_Class5",
+            "moduleId": 128666680,
+            "class": 5,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size6_Class3",
+            "moduleId": 128666665,
+            "class": 6,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size6_Class4",
+            "moduleId": 128666673,
+            "class": 6,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size6_Class5",
+            "moduleId": 128666681,
+            "class": 6,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size7_Class1",
+            "moduleId": 128666650,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size7_Class2",
+            "moduleId": 128666658,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size7_Class3",
+            "moduleId": 128666666,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size7_Class4",
+            "moduleId": 128666674,
+            "class": 7,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size7_Class5",
+            "moduleId": 128666682,
+            "class": 7,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size8_Class1",
+            "moduleId": 128666651,
+            "class": 8,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Scoop",
+            "symbol": "Int_FuelScoop_Size8_Class2",
+            "moduleId": 128666659,
+            "class": 8,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size1_Class3",
+            "moduleId": 128064346,
+            "class": 1,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size2_Class3",
+            "moduleId": 128064347,
+            "class": 2,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size3_Class3",
+            "moduleId": 128064348,
+            "class": 3,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size4_Class3",
+            "moduleId": 128064349,
+            "class": 4,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size5_Class3",
+            "moduleId": 128064350,
+            "class": 5,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size6_Class3",
+            "moduleId": 128064351,
+            "class": 6,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size7_Class3",
+            "moduleId": 128064352,
+            "class": 7,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Fuel Tank",
+            "symbol": "Int_FuelTank_Size8_Class3",
+            "moduleId": 128064353,
+            "class": 8,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size1_Class1",
+            "moduleId": 128668537,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size1_Class2",
+            "moduleId": 128668538,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size2_Class1",
+            "moduleId": 128668539,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size2_Class2",
+            "moduleId": 128668540,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size3_Class1",
+            "moduleId": 128668541,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size3_Class2",
+            "moduleId": 128668542,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size4_Class1",
+            "moduleId": 128668543,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size4_Class2",
+            "moduleId": 128668544,
+            "class": 4,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size5_Class1",
+            "moduleId": 128668545,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Hull Reinforcement Package",
+            "symbol": "Int_HullReinforcement_Size5_Class2",
+            "moduleId": 128668546,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size2_Class1",
+            "moduleId": 129030577,
+            "class": 2,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size2_Class2",
+            "moduleId": 129030578,
+            "class": 2,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size2_Class4",
+            "moduleId": 129030579,
+            "class": 2,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size3_Class1",
+            "moduleId": 129030581,
+            "class": 3,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size3_Class2",
+            "moduleId": 129030582,
+            "class": 3,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size4_Class1",
+            "moduleId": 129030585,
+            "class": 4,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size4_Class2",
+            "moduleId": 129030586,
+            "class": 4,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size5_Class1",
+            "moduleId": 129030589,
+            "class": 5,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size5_Class2",
+            "moduleId": 129030590,
+            "class": 5,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size6_Class1",
+            "moduleId": 129030593,
+            "class": 6,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size6_Class2",
+            "moduleId": 129030594,
+            "class": 6,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size7_Class1",
+            "moduleId": 129030597,
+            "class": 7,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size8_Class1",
+            "moduleId": 129036576,
+            "class": 8,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive (SCO)",
+            "symbol": "Int_Hyperdrive_Overcharge_Size8_Class2",
+            "moduleId": 129036577,
+            "class": 8,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size2_Class1",
+            "moduleId": 128064103,
+            "class": 2,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size2_Class2",
+            "moduleId": 128064104,
+            "class": 2,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size2_Class3",
+            "moduleId": 128064105,
+            "class": 2,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size2_Class4",
+            "moduleId": 128064106,
+            "class": 2,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size3_Class1",
+            "moduleId": 128064108,
+            "class": 3,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size3_Class2",
+            "moduleId": 128064109,
+            "class": 3,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size3_Class3",
+            "moduleId": 128064110,
+            "class": 3,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size3_Class4",
+            "moduleId": 128064111,
+            "class": 3,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size4_Class1",
+            "moduleId": 128064113,
+            "class": 4,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size4_Class2",
+            "moduleId": 128064114,
+            "class": 4,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size4_Class3",
+            "moduleId": 128064115,
+            "class": 4,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size5_Class1",
+            "moduleId": 128064118,
+            "class": 5,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size5_Class2",
+            "moduleId": 128064119,
+            "class": 5,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size5_Class3",
+            "moduleId": 128064120,
+            "class": 5,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size6_Class1",
+            "moduleId": 128064123,
+            "class": 6,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size6_Class2",
+            "moduleId": 128064124,
+            "class": 6,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size6_Class3",
+            "moduleId": 128064125,
+            "class": 6,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Frame Shift Drive",
+            "symbol": "Int_Hyperdrive_Size7_Class1",
+            "moduleId": 128064128,
+            "class": 7,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Large Planetary Vehicle Hangar",
+            "symbol": "Int_LargeBuggyBay_Size2_Class3",
+            "moduleId": 129046055,
+            "class": 2,
+            "rating": "F",
+            "category": "internal"
+          },
+          {
+            "name": "Large Planetary Vehicle Hangar",
+            "symbol": "Int_LargeBuggyBay_Size6_Class3",
+            "moduleId": 129046057,
+            "class": 6,
+            "rating": "F",
+            "category": "internal"
+          },
+          {
+            "name": "Mk II Cargo Rack",
+            "symbol": "Int_LargeCargoRack_Size7_Class1",
+            "moduleId": 129034963,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Mk II Cargo Rack",
+            "symbol": "Int_LargeCargoRack_Size8_class1",
+            "moduleId": 129034964,
+            "class": 8,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size1_Class2",
+            "moduleId": 128064139,
+            "class": 1,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size1_Class3",
+            "moduleId": 128064140,
+            "class": 1,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size1_Class4",
+            "moduleId": 128064141,
+            "class": 1,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size2_Class2",
+            "moduleId": 128064144,
+            "class": 2,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size2_Class3",
+            "moduleId": 128064145,
+            "class": 2,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size2_Class4",
+            "moduleId": 128064146,
+            "class": 2,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size3_Class1",
+            "moduleId": 128064148,
+            "class": 3,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size3_Class2",
+            "moduleId": 128064149,
+            "class": 3,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size3_Class3",
+            "moduleId": 128064150,
+            "class": 3,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size3_Class4",
+            "moduleId": 128064151,
+            "class": 3,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size4_Class1",
+            "moduleId": 128064153,
+            "class": 4,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size4_Class2",
+            "moduleId": 128064154,
+            "class": 4,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size4_Class3",
+            "moduleId": 128064155,
+            "class": 4,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size5_Class1",
+            "moduleId": 128064158,
+            "class": 5,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size5_Class2",
+            "moduleId": 128064159,
+            "class": 5,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size5_Class3",
+            "moduleId": 128064160,
+            "class": 5,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size6_Class1",
+            "moduleId": 128064163,
+            "class": 6,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size6_Class2",
+            "moduleId": 128064164,
+            "class": 6,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size6_Class3",
+            "moduleId": 128064165,
+            "class": 6,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size7_Class1",
+            "moduleId": 128064168,
+            "class": 7,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size7_Class2",
+            "moduleId": 128064169,
+            "class": 7,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size7_Class3",
+            "moduleId": 128064170,
+            "class": 7,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size8_Class1",
+            "moduleId": 128064173,
+            "class": 8,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Life Support",
+            "symbol": "Int_LifeSupport_Size8_Class3",
+            "moduleId": 128064175,
+            "class": 8,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Mk II Large Planetary Vehicle Hangar",
+            "symbol": "Int_MkIILargeBuggyBay_Size2_Class3",
+            "moduleId": 129046058,
+            "class": 2,
+            "rating": "F",
+            "category": "internal"
+          },
+          {
+            "name": "Mk II Large Planetary Vehicle Hangar",
+            "symbol": "Int_MkIILargeBuggyBay_Size6_Class3",
+            "moduleId": 129046060,
+            "class": 6,
+            "rating": "F",
+            "category": "internal"
+          },
+          {
+            "name": "MkII Business Class Passenger Cabin",
+            "symbol": "Int_MkII_PassengerCabin_Size3_Class2",
+            "moduleId": 129043772,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "MkII Economy Class Passenger Cabin",
+            "symbol": "Int_MkII_PassengerCabin_Size6_Class1",
+            "moduleId": 129043777,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "MkII Business Class Passenger Cabin",
+            "symbol": "Int_MkII_PassengerCabin_Size6_Class2",
+            "moduleId": 129043778,
+            "class": 5,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size1_Class1",
+            "moduleId": 128737270,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size1_Class2",
+            "moduleId": 128737271,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size2_Class1",
+            "moduleId": 128737272,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size2_Class2",
+            "moduleId": 128737273,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size3_Class1",
+            "moduleId": 128737274,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size3_Class2",
+            "moduleId": 128737275,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size4_Class1",
+            "moduleId": 128737276,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Heavy Duty Module Reinforcement Package",
+            "symbol": "Int_ModuleReinforcement_Size5_Class2",
+            "moduleId": 129044377,
+            "class": 5,
+            "rating": "D",
+            "category": "mercgear"
+          },
+          {
+            "name": "Mk II Mining Multi-Limpet Controller",
+            "symbol": "Int_MultiDroneControl_MiningV2_Size5_Class5",
+            "moduleId": 129036138,
+            "class": 5,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Operations Multi Limpet Controller",
+            "symbol": "Int_MultiDroneControl_Operations_Size3_Class3",
+            "moduleId": 129001923,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Operations Multi Limpet Controller",
+            "symbol": "Int_MultiDroneControl_Operations_Size3_Class4",
+            "moduleId": 129001924,
+            "class": 3,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Rescue Multi Limpet Controller",
+            "symbol": "Int_MultiDroneControl_Rescue_Size3_Class3",
+            "moduleId": 129001926,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Xeno Multi Limpet Controller",
+            "symbol": "Int_MultiDroneControl_Xeno_Size3_Class3",
+            "moduleId": 129001927,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Xeno Multi Limpet Controller",
+            "symbol": "Int_MultiDroneControl_Xeno_Size3_Class4",
+            "moduleId": 129001928,
+            "class": 3,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Business Class Passenger Cabin",
+            "symbol": "Int_PassengerCabin_Size3_Class2",
+            "moduleId": 128734692,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Economy Class Passenger Cabin",
+            "symbol": "Int_PassengerCabin_Size4_Class1",
+            "moduleId": 128727922,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Business Class Passenger Cabin",
+            "symbol": "Int_PassengerCabin_Size4_Class2",
+            "moduleId": 128727923,
+            "class": 4,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "First Class Passenger Cabin",
+            "symbol": "Int_PassengerCabin_Size4_Class3",
+            "moduleId": 128727924,
+            "class": 4,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Economy Class Passenger Cabin",
+            "symbol": "Int_PassengerCabin_Size6_Class1",
+            "moduleId": 128727926,
+            "class": 6,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Planetary Approach Suite",
+            "symbol": "Int_PlanetApproachSuite",
+            "moduleId": 128672317,
+            "class": 1,
+            "rating": "I",
+            "category": "internal"
+          },
+          {
+            "name": "Advanced Planetary Approach Suite",
+            "symbol": "Int_PlanetApproachSuite_Advanced",
+            "moduleId": 128975719,
+            "class": 1,
+            "rating": "I",
+            "category": "internal"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size1_Class2",
+            "moduleId": 128064179,
+            "class": 1,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size1_Class3",
+            "moduleId": 128064180,
+            "class": 1,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size1_Class4",
+            "moduleId": 128064181,
+            "class": 1,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size2_Class3",
+            "moduleId": 128064185,
+            "class": 2,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size2_Class4",
+            "moduleId": 128064186,
+            "class": 2,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Support Focused Power Distributor",
+            "symbol": "Int_PowerDistributor_Size3_Class2",
+            "moduleId": 129045438,
+            "class": 3,
+            "rating": "D",
+            "category": "mercgear"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size3_Class3",
+            "moduleId": 128064190,
+            "class": 3,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size4_Class1",
+            "moduleId": 128064193,
+            "class": 4,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Support Focused Power Distributor",
+            "symbol": "Int_PowerDistributor_Size4_Class2",
+            "moduleId": 129045440,
+            "class": 4,
+            "rating": "D",
+            "category": "mercgear"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size4_Class3",
+            "moduleId": 128064195,
+            "class": 4,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size5_Class1",
+            "moduleId": 128064198,
+            "class": 5,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size5_Class2",
+            "moduleId": 128064199,
+            "class": 5,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size5_Class3",
+            "moduleId": 128064200,
+            "class": 5,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size6_Class1",
+            "moduleId": 128064203,
+            "class": 6,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size6_Class2",
+            "moduleId": 128064204,
+            "class": 6,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size6_Class3",
+            "moduleId": 128064205,
+            "class": 6,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size7_Class1",
+            "moduleId": 128064208,
+            "class": 7,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size7_Class2",
+            "moduleId": 128064209,
+            "class": 7,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size7_Class3",
+            "moduleId": 128064210,
+            "class": 7,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size8_Class1",
+            "moduleId": 128064213,
+            "class": 8,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size8_Class2",
+            "moduleId": 128064214,
+            "class": 8,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Distributor",
+            "symbol": "Int_PowerDistributor_Size8_Class3",
+            "moduleId": 128064215,
+            "class": 8,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size2_Class1",
+            "moduleId": 128064033,
+            "class": 2,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size2_Class2",
+            "moduleId": 128064034,
+            "class": 2,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size2_Class3",
+            "moduleId": 128064035,
+            "class": 2,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size3_Class1",
+            "moduleId": 128064038,
+            "class": 3,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size3_Class2",
+            "moduleId": 128064039,
+            "class": 3,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size3_Class3",
+            "moduleId": 128064040,
+            "class": 3,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size3_Class4",
+            "moduleId": 128064041,
+            "class": 3,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size4_Class1",
+            "moduleId": 128064043,
+            "class": 4,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size4_Class2",
+            "moduleId": 128064044,
+            "class": 4,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size4_Class3",
+            "moduleId": 128064045,
+            "class": 4,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size5_Class1",
+            "moduleId": 128064048,
+            "class": 5,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size5_Class2",
+            "moduleId": 128064049,
+            "class": 5,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size5_Class3",
+            "moduleId": 128064050,
+            "class": 5,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size6_Class1",
+            "moduleId": 128064053,
+            "class": 6,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size6_Class2",
+            "moduleId": 128064054,
+            "class": 6,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size6_Class3",
+            "moduleId": 128064055,
+            "class": 6,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size7_Class1",
+            "moduleId": 128064058,
+            "class": 7,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size7_Class2",
+            "moduleId": 128064059,
+            "class": 7,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size7_Class3",
+            "moduleId": 128064060,
+            "class": 7,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size8_Class1",
+            "moduleId": 128064063,
+            "class": 8,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Power Plant",
+            "symbol": "Int_Powerplant_Size8_Class3",
+            "moduleId": 128064065,
+            "class": 8,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size1_Class1",
+            "moduleId": 128666684,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size1_Class2",
+            "moduleId": 128666688,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size1_Class3",
+            "moduleId": 128666692,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size1_Class5",
+            "moduleId": 128666700,
+            "class": 1,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size2_Class1",
+            "moduleId": 128666685,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size2_Class2",
+            "moduleId": 128666689,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size2_Class3",
+            "moduleId": 128666693,
+            "class": 2,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size2_Class4",
+            "moduleId": 128666697,
+            "class": 2,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Refinery",
+            "symbol": "Int_Refinery_Size2_Class5",
+            "moduleId": 128666701,
+            "class": 2,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size1_Class3",
+            "moduleId": 128667614,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size1_Class4",
+            "moduleId": 128667622,
+            "class": 1,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size1_Class5",
+            "moduleId": 128667630,
+            "class": 1,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size2_Class2",
+            "moduleId": 128667607,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size2_Class3",
+            "moduleId": 128667615,
+            "class": 2,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size2_Class4",
+            "moduleId": 128667623,
+            "class": 2,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size2_Class5",
+            "moduleId": 128667631,
+            "class": 2,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size3_Class1",
+            "moduleId": 128667600,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size3_Class2",
+            "moduleId": 128667608,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size3_Class3",
+            "moduleId": 128667616,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size3_Class5",
+            "moduleId": 128667632,
+            "class": 3,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size4_Class1",
+            "moduleId": 128667601,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size4_Class2",
+            "moduleId": 128667609,
+            "class": 4,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size4_Class3",
+            "moduleId": 128667617,
+            "class": 4,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size4_Class4",
+            "moduleId": 128667625,
+            "class": 4,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size4_Class5",
+            "moduleId": 128667633,
+            "class": 4,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size5_Class1",
+            "moduleId": 128667602,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size5_Class2",
+            "moduleId": 128667610,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size5_Class3",
+            "moduleId": 128667618,
+            "class": 5,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size6_Class1",
+            "moduleId": 128667603,
+            "class": 6,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size6_Class2",
+            "moduleId": 128667611,
+            "class": 6,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size6_Class3",
+            "moduleId": 128667619,
+            "class": 6,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size6_Class4",
+            "moduleId": 128667627,
+            "class": 6,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size6_Class5",
+            "moduleId": 128667635,
+            "class": 6,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size7_Class1",
+            "moduleId": 128667604,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size7_Class2",
+            "moduleId": 128667612,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size7_Class3",
+            "moduleId": 128667620,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size7_Class4",
+            "moduleId": 128667628,
+            "class": 7,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size7_Class5",
+            "moduleId": 128667636,
+            "class": 7,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size8_Class1",
+            "moduleId": 128667605,
+            "class": 8,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size8_Class2",
+            "moduleId": 128667613,
+            "class": 8,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size8_Class4",
+            "moduleId": 128667629,
+            "class": 8,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Auto Field-Maintenance Unit",
+            "symbol": "Int_Repairer_Size8_Class5",
+            "moduleId": 128667637,
+            "class": 8,
+            "rating": "A",
+            "category": "internal"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size1_Class1",
+            "moduleId": 128064218,
+            "class": 1,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size1_Class2",
+            "moduleId": 128064219,
+            "class": 1,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size1_Class3",
+            "moduleId": 128064220,
+            "class": 1,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size1_Class4",
+            "moduleId": 128064221,
+            "class": 1,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size2_Class1",
+            "moduleId": 128064223,
+            "class": 2,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size2_Class2",
+            "moduleId": 128064224,
+            "class": 2,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size2_Class3",
+            "moduleId": 128064225,
+            "class": 2,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size3_Class1",
+            "moduleId": 128064228,
+            "class": 3,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size3_Class2",
+            "moduleId": 128064229,
+            "class": 3,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size3_Class3",
+            "moduleId": 128064230,
+            "class": 3,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size3_Class4",
+            "moduleId": 128064231,
+            "class": 3,
+            "rating": "B",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size4_Class3",
+            "moduleId": 128064235,
+            "class": 4,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size5_Class2",
+            "moduleId": 128064239,
+            "class": 5,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size5_Class3",
+            "moduleId": 128064240,
+            "class": 5,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size6_Class1",
+            "moduleId": 128064243,
+            "class": 6,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size6_Class2",
+            "moduleId": 128064244,
+            "class": 6,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size6_Class3",
+            "moduleId": 128064245,
+            "class": 6,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size7_Class1",
+            "moduleId": 128064248,
+            "class": 7,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size8_Class1",
+            "moduleId": 128064253,
+            "class": 8,
+            "rating": "E",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size8_Class2",
+            "moduleId": 128064254,
+            "class": 8,
+            "rating": "D",
+            "category": "standard"
+          },
+          {
+            "name": "Sensors",
+            "symbol": "Int_Sensors_Size8_Class3",
+            "moduleId": 128064255,
+            "class": 8,
+            "rating": "C",
+            "category": "standard"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size1_Class1",
+            "moduleId": 128064298,
+            "class": 1,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size1_Class2",
+            "moduleId": 128064299,
+            "class": 1,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size1_Class3",
+            "moduleId": 128064300,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size1_Class4",
+            "moduleId": 128064301,
+            "class": 1,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size2_Class1",
+            "moduleId": 128064303,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size2_Class2",
+            "moduleId": 128064304,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size2_Class3",
+            "moduleId": 128064305,
+            "class": 2,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size3_Class1",
+            "moduleId": 128064308,
+            "class": 3,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size3_Class2",
+            "moduleId": 128064309,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size3_Class3",
+            "moduleId": 128064310,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size4_Class1",
+            "moduleId": 128064313,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size4_Class2",
+            "moduleId": 128064314,
+            "class": 4,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size4_Class3",
+            "moduleId": 128064315,
+            "class": 4,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size5_Class1",
+            "moduleId": 128064318,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size5_Class2",
+            "moduleId": 128064319,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size5_Class3",
+            "moduleId": 128064320,
+            "class": 5,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size6_Class1",
+            "moduleId": 128064323,
+            "class": 6,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size6_Class2",
+            "moduleId": 128064324,
+            "class": 6,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size6_Class3",
+            "moduleId": 128064325,
+            "class": 6,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size7_Class1",
+            "moduleId": 128064328,
+            "class": 7,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size7_Class2",
+            "moduleId": 128064329,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size7_Class3",
+            "moduleId": 128064330,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size8_Class1",
+            "moduleId": 128064333,
+            "class": 8,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size8_Class2",
+            "moduleId": 128064334,
+            "class": 8,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Cell Bank",
+            "symbol": "Int_ShieldCellBank_Size8_Class3",
+            "moduleId": 128064335,
+            "class": 8,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size1_Class3_Fast",
+            "moduleId": 128671331,
+            "class": 1,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size2_Class1",
+            "moduleId": 128064263,
+            "class": 2,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size2_Class2",
+            "moduleId": 128064264,
+            "class": 2,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size2_Class3",
+            "moduleId": 128064265,
+            "class": 2,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size2_Class3_Fast",
+            "moduleId": 128671332,
+            "class": 2,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size2_Class4",
+            "moduleId": 128064266,
+            "class": 2,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size3_Class2",
+            "moduleId": 128064269,
+            "class": 3,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size3_Class3",
+            "moduleId": 128064270,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size3_Class3_Fast",
+            "moduleId": 128671333,
+            "class": 3,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size3_Class4",
+            "moduleId": 128064271,
+            "class": 3,
+            "rating": "B",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size4_Class1",
+            "moduleId": 128064273,
+            "class": 4,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size4_Class2",
+            "moduleId": 128064274,
+            "class": 4,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size4_Class3",
+            "moduleId": 128064275,
+            "class": 4,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size4_Class3_Fast",
+            "moduleId": 128671334,
+            "class": 4,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size5_Class1",
+            "moduleId": 128064278,
+            "class": 5,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size5_Class2",
+            "moduleId": 128064279,
+            "class": 5,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size5_Class3_Fast",
+            "moduleId": 128671335,
+            "class": 5,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size6_Class1",
+            "moduleId": 128064283,
+            "class": 6,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size6_Class2",
+            "moduleId": 128064284,
+            "class": 6,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size6_Class3",
+            "moduleId": 128064285,
+            "class": 6,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size6_Class3_Fast",
+            "moduleId": 128671336,
+            "class": 6,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size7_Class2",
+            "moduleId": 128064289,
+            "class": 7,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size7_Class3",
+            "moduleId": 128064290,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size7_Class3_Fast",
+            "moduleId": 128671337,
+            "class": 7,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size8_Class1",
+            "moduleId": 128064293,
+            "class": 8,
+            "rating": "E",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size8_Class2",
+            "moduleId": 128064294,
+            "class": 8,
+            "rating": "D",
+            "category": "internal"
+          },
+          {
+            "name": "Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size8_Class3",
+            "moduleId": 128064295,
+            "class": 8,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Bi-Weave Shield Generator",
+            "symbol": "Int_ShieldGenerator_Size8_Class3_Fast",
+            "moduleId": 128671338,
+            "class": 8,
+            "rating": "C",
+            "category": "internal"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Krait_Light_Armour_Grade1",
+            "moduleId": 128839283,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Krait Phantom"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Krait_Light_Armour_Grade2",
+            "moduleId": 128839284,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Krait Phantom"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Krait_Light_Armour_Grade3",
+            "moduleId": 128839285,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Krait Phantom"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Krait_MkII_Armour_Grade1",
+            "moduleId": 128816569,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Krait MkII"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Krait_MkII_Armour_Grade2",
+            "moduleId": 128816570,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Krait MkII"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Krait_MkII_Armour_Grade3",
+            "moduleId": 128816571,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Krait MkII"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "LakonMiner_Armour_Grade1",
+            "moduleId": 129036132,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-11 Prospector"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "LakonMiner_Armour_Grade2",
+            "moduleId": 129036133,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-11 Prospector"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "LakonMiner_Armour_Grade3",
+            "moduleId": 129036134,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-11 Prospector"
+          },
+          {
+            "name": "Mirrored Surface Composite",
+            "symbol": "LakonMiner_Armour_Mirrored",
+            "moduleId": 129036135,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-11 Prospector"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "PantherMkII_Armour_Grade1",
+            "moduleId": 129034271,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Panther Clipper MkII"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "PantherMkII_Armour_Grade2",
+            "moduleId": 129034272,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Panther Clipper MkII"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "SideWinder_Armour_Grade1",
+            "moduleId": 128049250,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Sidewinder"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "SideWinder_Armour_Grade2",
+            "moduleId": 128049251,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Sidewinder"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "SideWinder_Armour_Grade3",
+            "moduleId": 128049252,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Sidewinder"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "SmallCombat01_NX_Armour_Grade1",
+            "moduleId": 129039243,
+            "class": 1,
+            "rating": "C",
+            "category": "standard",
+            "ship": "Kestrel Mk II"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "SmallCombat01_NX_Armour_Grade2",
+            "moduleId": 129039244,
+            "class": 1,
+            "rating": "B",
+            "category": "standard",
+            "ship": "Kestrel Mk II"
+          },
+          {
+            "name": "Mirrored Surface Composite",
+            "symbol": "SmallCombat01_NX_Armour_Mirrored",
+            "moduleId": 129039246,
+            "class": 1,
+            "rating": "A",
+            "category": "standard",
+            "ship": "Kestrel Mk II"
+          },
+          {
+            "name": "Reactive Surface Composite",
+            "symbol": "SmallCombat01_NX_Armour_Reactive",
+            "moduleId": 129039247,
+            "class": 1,
+            "rating": "A",
+            "category": "standard",
+            "ship": "Kestrel Mk II"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Type6_Armour_Grade1",
+            "moduleId": 128049286,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-6 Transporter"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Type6_Armour_Grade2",
+            "moduleId": 128049287,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-6 Transporter"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Type6_Armour_Grade3",
+            "moduleId": 128049288,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-6 Transporter"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Type7_Armour_Grade1",
+            "moduleId": 128049298,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-7 Transporter"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Type7_Armour_Grade2",
+            "moduleId": 128049299,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-7 Transporter"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Type7_Armour_Grade3",
+            "moduleId": 128049300,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-7 Transporter"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Type8_Armour_Grade1",
+            "moduleId": 129030535,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-8 Transporter"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Type8_Armour_Grade2",
+            "moduleId": 129030536,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-8 Transporter"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Type8_Armour_Grade3",
+            "moduleId": 129030537,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-8 Transporter"
+          },
+          {
+            "name": "Mirrored Surface Composite",
+            "symbol": "Type8_Armour_Mirrored",
+            "moduleId": 129030538,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Type-8 Transporter"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Viper_Armour_Grade1",
+            "moduleId": 128049274,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIII"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Viper_Armour_Grade2",
+            "moduleId": 128049275,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIII"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Viper_Armour_Grade3",
+            "moduleId": 128049276,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIII"
+          },
+          {
+            "name": "Reactive Surface Composite",
+            "symbol": "Viper_Armour_Reactive",
+            "moduleId": 128049278,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIII"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Viper_MkIV_Armour_Grade1",
+            "moduleId": 128672257,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIV"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Viper_MkIV_Armour_Grade2",
+            "moduleId": 128672258,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIV"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Viper_MkIV_Armour_Grade3",
+            "moduleId": 128672259,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIV"
+          },
+          {
+            "name": "Reactive Surface Composite",
+            "symbol": "Viper_MkIV_Armour_Reactive",
+            "moduleId": 128672261,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Viper MkIV"
+          },
+          {
+            "name": "Lightweight Alloy",
+            "symbol": "Vulture_Armour_Grade1",
+            "moduleId": 128049310,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Vulture"
+          },
+          {
+            "name": "Reinforced Alloy",
+            "symbol": "Vulture_Armour_Grade2",
+            "moduleId": 128049311,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Vulture"
+          },
+          {
+            "name": "Military Grade Composite",
+            "symbol": "Vulture_Armour_Grade3",
+            "moduleId": 128049312,
+            "class": 1,
+            "rating": "I",
+            "category": "standard",
+            "ship": "Vulture"
+          }
+        ],
+        "updateTime": "2026-09-04 01:36:54+00"
+      }
+    }
+  ]
+}

@@ -1,3 +1,9 @@
-.vscode
-data/*
-*.log
+.env
+data/*.gz
+data/*.json
+!data/galaxy.schema.json
+dumps/
+failed/
+__pycache__/
+*.pyc
+.pytest_cache/

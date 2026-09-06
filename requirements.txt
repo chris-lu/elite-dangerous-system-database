@@ -1,0 +1,4 @@
+psycopg[binary]>=3.2
+orjson>=3.10
+smart_open[http]>=7.0
+isal>=1.6

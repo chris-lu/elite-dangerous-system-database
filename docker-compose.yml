@@ -1,37 +1,109 @@
 services:
   postgres:
-    image: postgis/postgis:15-3.3
-    shm_size: 1g
-    container_name: elite_dangerous_db
+    image: postgres:17
+    # Postgres allocates parallel-query / parallel-index-build memory in
+    # /dev/shm; this is a cap on a tmpfs, no memory is reserved up front.
+    shm_size: 8g
     environment:
-      POSTGRES_DB: elite_dangerous
-      POSTGRES_USER: elite_user
-      POSTGRES_PASSWORD: elite_password
-      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+      POSTGRES_DB: ${POSTGRES_DB:-elite_dangerous}
+      POSTGRES_USER: ${POSTGRES_USER:-elite_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-elite_password}
+      # Builtin C.UTF-8 (PG17): code-point ordering like C (memcmp-fast
+      # sorts, LIKE 'prefix%' usable on plain btrees) but Unicode-aware
+      # lower()/ILIKE, so 'krüger' matches 'KRÜGER'. An initdb-time choice.
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale-provider=builtin --locale=C.UTF-8 --data-checksums"
     ports:
-      - "5432:5432"
+      # Loopback only: Docker Desktop would otherwise publish the port on
+      # every interface of the host.
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./migrations:/docker-entrypoint-initdb.d
-      - ./data:/data
+      - pgdata:/var/lib/postgresql/data
+      - ./data:/data:ro
+    # Tuned for a 64 GB / 32 core host where Docker Desktop (WSL2) sees ~31 GB
+    # unless %UserProfile%\.wslconfig raises it (see README).
+    # Bulk-load oriented single-node analytics database:
+    #  - wal_level=minimal: CREATE INDEX, ALTER TABLE SET LOGGED and COPY into
+    #    freshly created tables write no WAL (no replication is planned).
+    #  - synchronous_commit=off: the dump is re-importable; the importer
+    #    issues one synchronous commit at the end of each run.
+    #  - memory: shared_buffers 8 GB + at most 4 concurrent index builds at
+    #    2 GB (set per session by the importer) + autovacuum 1 GB each.
     command: >
-      postgres 
+      postgres
       -c shared_preload_libraries=pg_stat_statements
-      -c pg_stat_statements.track=all
-      -c max_connections=200
-      -c shared_buffers=1GB
-      -c effective_cache_size=3GB
-      -c maintenance_work_mem=256MB
+      -c pg_stat_statements.track=top
+      -c max_connections=100
+      -c shared_buffers=8GB
+      -c effective_cache_size=20GB
+      -c work_mem=128MB
+      -c maintenance_work_mem=1GB
+      -c autovacuum_work_mem=1GB
+      -c temp_buffers=256MB
+      -c max_worker_processes=32
+      -c max_parallel_workers=16
+      -c max_parallel_workers_per_gather=8
+      -c max_parallel_maintenance_workers=4
+      -c wal_level=minimal
+      -c max_wal_senders=0
+      -c archive_mode=off
+      -c wal_compression=lz4
+      -c wal_buffers=64MB
+      -c min_wal_size=2GB
+      -c max_wal_size=16GB
+      -c checkpoint_timeout=30min
       -c checkpoint_completion_target=0.9
-      -c wal_buffers=16MB
-      -c default_statistics_target=100
+      -c synchronous_commit=off
+      -c default_toast_compression=lz4
       -c random_page_cost=1.1
-      -c effective_io_concurrency=200
-      -c work_mem=32MB
-      -c min_wal_size=1GB
-      -c max_wal_size=4GB
+      -c effective_io_concurrency=256
+      -c maintenance_io_concurrency=256
+      -c default_statistics_target=200
+      -c jit=off
+      -c autovacuum_max_workers=6
+      -c autovacuum_naptime=15s
+      -c autovacuum_vacuum_cost_delay=0
+      -c autovacuum_vacuum_cost_limit=10000
+      -c log_min_duration_statement=2000
+      -c log_checkpoints=on
+      -c log_autovacuum_min_duration=10s
+      -c log_lock_waits=on
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-elite_user} -d ${POSTGRES_DB:-elite_dangerous}"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
     restart: unless-stopped
 
+  # The importer runs INSIDE the compose network. Measured on this host:
+  # COPY through Docker Desktop's localhost port-forward tops out around
+  # 6 Mrows/s, while a container on the same network reaches ~16 Mrows/s.
+  #   docker compose run --rm importer fresh /data/galaxy_1day.json.gz
+  #   docker compose run --rm importer update /data/galaxy_1day.json.gz
+  #   docker compose run --rm importer sync
+  importer:
+    build:
+      context: .
+      dockerfile: Dockerfile.importer
+    profiles: ["tools"]
+    init: true
+    environment:
+      PG_DSN: postgresql://${POSTGRES_USER:-elite_user}:${POSTGRES_PASSWORD:-elite_password}@postgres:5432/${POSTGRES_DB:-elite_dangerous}
+      ED_DUMP_DIR: /dumps
+      PYTHONUNBUFFERED: "1"
+      PYTHONUTF8: "1"
+    volumes:
+      - ./data:/data:ro
+      # Writable: `sync` downloads the bigger dumps here (with resume) before
+      # importing them, and failed batches are dead-lettered here.
+      - ${ED_DUMP_DIR:-./dumps}:/dumps
+    depends_on:
+      postgres:
+        condition: service_healthy
+
 volumes:
-  postgres_data:
-    driver: local
+  # Named volume => lives on the WSL2 ext4 disk (fast). A bind mount from an
+  # NTFS drive would be several times slower for a database.
+  # The full galaxy dump needs hundreds of GB: move Docker Desktop's disk image
+  # to a drive with space (Settings > Resources > Advanced > Disk image
+  # location, e.g. E:) BEFORE importing it.
+  pgdata:
